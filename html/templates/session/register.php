@@ -16,7 +16,7 @@
   </label>
 
   <label>Email:
-      <input type="text" name="email" value="">
+      <input type="email" name="email" value="">
   </label>
 
   <input type="submit" value="Register">
