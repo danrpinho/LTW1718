@@ -3,7 +3,7 @@
     <head>
         <title>Do The To-Do!</title>
         <meta charset="utf-8">
-        <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Patua+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Crete+Round" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         <link href="css/layout.css" rel="stylesheet">
         <link href="css/responsive.css" rel="stylesheet">
