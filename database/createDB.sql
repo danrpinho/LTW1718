@@ -19,5 +19,12 @@ CREATE TABLE listitems(
     listID INTEGER REFERENCES todolists,
     descr TEXT,
     solved INTEGER,
+    assignee TEXT REFERENCES users.username,
     PRIMARY KEY(id, listID)
+)
+
+CREATE TABLE categories(
+    category TEXT,
+    listID integer,
+    PRIMARY KEY(category, listID)
 )
