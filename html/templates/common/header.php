@@ -3,6 +3,7 @@
     <head>
         <title>Do The To-Do!</title>
         <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Patua+One" rel="stylesheet">
     </head>
     <body>
         <header>
