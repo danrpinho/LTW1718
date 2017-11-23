@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en_US">
+<html>
     <head>
-        <title>Do The To-Do!</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="style.css" rel="stylesheet">
-        <link href="layout.css" rel="stylesheet">
+        <title>LTW PROJETO TO-DO LISTS</title>
+        <meta charset="utf-8">
     </head>
     <body>
         <header>
-            <h1><a href="">Do The To-Do!</a>></h1>
-            <h2><a href="">Helping you getting things done since 2017!</a></h2>
+            <h1>Online To-Do Lists</h1>
+            <div id="signup">
+              <a href="register.html">Register</a>
+              <a href="login.html">Login</a>
+              <a href="logout.html">Logout</a>
+            </div>
         </header>
