@@ -1,13 +1,38 @@
-header{
-    background-color: #0b5860
+/* cores http://www.color-hex.com/color-palette/49801 */
+
+/*                  HEADER                  */
+
+body>header {
+    background-color: #0e7979;
 }
 
-body > header a{
+body>header a {
     color: white;
     text-decoration: none;
     font-family: 'Patua One', 'slab';
 }
 
-aside{
-    background-color: #d87070
+body>header>div a {
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+}
+
+/*                  SIDEBAR                 */
+aside {
+    background-color: #e29f9f;
+}
+
+/*                  FOOTER                  */
+body > footer{
+    background-color: #0e7979;
+}
+
+body > footer > p{
+    color: white;
+    text-decoration: none;
+    font-family: 'Patua One', 'slab';
+}
+
+/*                  MAIN CONTENT            */
+body #content{
+    background-color: #ebdcdc
 }
