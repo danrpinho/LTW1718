@@ -1,7 +1,8 @@
 CREATE TABLE users(
     username TEXT PRIMARY KEY,
     fullname TEXT,
-    pword TEXT,
+    pword TEXT NOT NULL,
+    email TEXT NOT NULL,
     joined DATE
 );
 
