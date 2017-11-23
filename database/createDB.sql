@@ -10,7 +10,8 @@ CREATE TABLE todolists(
     listID INTEGER PRIMARY KEY,
     username TEXT REFERENCES users,
     title TEXT,
-    creation DATE
+    creation DATE,
+    datadue DATE
 );
 
 CREATE TABLE listitems(
