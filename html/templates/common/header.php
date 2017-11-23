@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en_US">
     <head>
-        <title>LTW PROJETO TO-DO LISTS</title>
+        <title>Do The To-Do!</title>
         <meta charset="utf-8">
     </head>
     <body>
         <header>
-            <h1>Online To-Do Lists</h1>
+            <h1>Do The To-Do!</h1>
+            <h2>Helping you getting things done since 2017!</h2>
             <div id="signup">
               <a href="register.html">Register</a>
               <a href="login.html">Login</a>
