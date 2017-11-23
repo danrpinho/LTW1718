@@ -1,0 +1,13 @@
+header{
+    background-color: #0b5860
+}
+
+body > header a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Patua One', 'slab';
+}
+
+aside{
+    background-color: #d87070
+}
