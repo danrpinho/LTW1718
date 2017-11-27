@@ -10,8 +10,8 @@
     </head>
     <body>
         <header>
-            <h1><a href="">Do The To-Do!</a></h1>
-            <h2><a href="">Helping you getting things done since 2017!</a></h2>
+            <h1><a href="index.php">Do The To-Do!</a></h1>
+            <h2><a href="index.php">Helping you getting things done since 2017!</a></h2>
             <div id="signup">
             <?php include_once('html/templates/common/user.php'); ?>
 
