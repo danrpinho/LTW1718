@@ -3,7 +3,7 @@
     <ul>
         <li>Username: </li>
         <li>Name:</li>
-        <li>e-mail address:<li>
-        <li>Date of joining:<li>
+        <li>E-mail address:</li>
+        <li>Join date:</li>
     </ul>
 </section>

@@ -1,0 +1,58 @@
+body{
+    background-color: white;
+    width: 60em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto;
+}
+
+/*                  HEADER                  */
+body > header{
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    margin-bottom: 1em;
+}
+
+body > header > h1{
+    grid-column: span 2;
+    margin: 1rem auto 0 2rem;
+}
+
+body > header > h2{
+    grid-column: span 2;
+    margin: 0 auto 1rem 2rem;
+}
+
+body > header > #signup{
+    grid-column: span 2;
+}
+
+/*                  FOOTER                  */
+body > footer{
+    grid-column: span 2;
+    margin-top: 1em;
+}
+
+body > footer > p{
+    margin-left: 1rem;
+}
+
+/*                  CONTENT                 */
+body > #content{
+    margin-left: 1em;
+}
+
+body > #content > h3{
+    margin-left: 1rem;
+}
+
+body > #content > p{
+    margin-left: 1rem;
+}
+
+body > #content > h3{
+    margin-left: 1rem;
+}
