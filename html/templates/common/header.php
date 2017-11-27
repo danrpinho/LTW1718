@@ -13,8 +13,6 @@
             <h1><a href="">Do The To-Do!</a></h1>
             <h2><a href="">Helping you getting things done since 2017!</a></h2>
             <div id="signup">
-              <a href="register.php">Register</a>
-              <a href="login.php">Login</a>
-              <a href="logout.php">Logout</a>
-            </div>
+            <?php include_once('html/templates/common/user.php'); ?>
+
         </header>
