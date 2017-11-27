@@ -1,5 +1,7 @@
 <?php
-include ('html/templates/common/header.php');
-include ('html/templates/session/user_settings.php');
-include ('html/templates/common/footer.php');
+include_once('html/includes/init.php');
+include_once('html/database/connection.php');
+include_once ('html/templates/common/header.php');
+include_once ('html/templates/session/user_settings.php');
+include_once ('html/templates/common/footer.php');
 ?>
