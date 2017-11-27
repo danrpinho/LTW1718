@@ -6,7 +6,7 @@
     </label>
 
     <label>Name:
-      <input type="text" name="name" value="">
+      <input type="text" name="fullname" value="">
     </label>
 
     <label>Password:
