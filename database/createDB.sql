@@ -1,3 +1,8 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS todolists;
+DROP TABLE IF EXISTS listitems;
+DROP TABLE IF EXISTS categories;
+
 CREATE TABLE users(
     username TEXT PRIMARY KEY,
     fullname TEXT,
@@ -19,12 +24,12 @@ CREATE TABLE listitems(
     listID INTEGER REFERENCES todolists,
     descr TEXT,
     solved INTEGER,
-    assignee TEXT REFERENCES users.username,
+    assignee TEXT REFERENCES users,
     PRIMARY KEY(id, listID)
-)
+);
 
 CREATE TABLE categories(
     category TEXT,
     listID integer,
     PRIMARY KEY(category, listID)
-)
+);
