@@ -8,3 +8,6 @@ INSERT INTO "users" VALUES ('evo', 'Fernando', '1bda07870e85c5b0a56c55b25b8de246
 INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo', '2017-11-26', '2017-11-27');
 INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo2', '2017-11-27', '2017-11-30');
 INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo3', '2017-11-26', '2017-12-15');
+
+INSERT INTO "listitems" VALUES ( NULL, 1, 'Verificar se aparece', 0, 'jonas');
+INSERT INTO "listitems" VALUES ( NULL, 1, 'Verificar se aparece2', 0, NULL);

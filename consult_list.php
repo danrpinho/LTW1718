@@ -6,6 +6,7 @@
     if (isset($_SESSION['username']) && $_SESSION['username'] != '') {
         include_once('html/database/list.php');
         $list = getListById($_GET['id']);
+        $items = getListItems($_GET['id']);
         include_once('html/templates/aside/sidebar.php');
         include_once('html/templates/lists/list.php');
     } else {
