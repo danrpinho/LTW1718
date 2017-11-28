@@ -56,3 +56,7 @@ body > #content > p{
 body > #content > h3{
     margin-left: 1rem;
 }
+
+body > #login{
+    grid-column: span 2;
+}

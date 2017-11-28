@@ -37,6 +37,10 @@ body #content{
     background-color: #ebdcdc
 }
 
-body > #content > h3{
+body #login{
+    background-color: #ebdcdc
+}
+
+body > section > h3{
     font-family: 'Crete Round', 'slab';
 }

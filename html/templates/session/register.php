@@ -1,4 +1,4 @@
-<section id="content">
+<section id="login">
   <h3>Register a new account</h3>
   <form action="new_user.php" method="post">
     <label>Username:
