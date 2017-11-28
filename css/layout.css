@@ -43,13 +43,14 @@ body > footer > p{
 /*                  CONTENT                 */
 body > #content{
     margin-left: 1em;
+    grid-row: span 2;
 }
 
-body > #content > h3{
+body > section > h3{
     margin-left: 1rem;
 }
 
-body > #content > p{
+body > section > p{
     margin-left: 1rem;
 }
 
