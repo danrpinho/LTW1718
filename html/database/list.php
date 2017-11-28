@@ -12,8 +12,8 @@
   function getListById($listID) {
     global $dbh;
     if (isset($_SESSION['username'])) {
-        $stmt = $dbh->prepare('SELECT * FROM todolists WHERE username = ? AND listID = ?');
-        $stmt->execute(array($_SESSION['username'], $_GET['listID']));
+        $stmt = $dbh->prepare('SELECT * FROM todolists WHERE listID = ? AND username = ?');
+        $stmt->execute(array($listID, $_SESSION['username']));
         return $stmt->fetchAll();
     }
   }
