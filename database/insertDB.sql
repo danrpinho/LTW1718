@@ -1,8 +1,8 @@
 PRAGMA foreign_keys=ON;
 
-INSERT INTO "users" VALUES ('teste', 'Teste', '1234', 'teste@gmail.com', '2017-11-27');
-INSERT INTO "users" VALUES ('jonas', 'Joao', 'jonas1996', 'jonas@hotmail.com', '2107-11-25');
-INSERT INTO "users" VALUES ('evo', 'Fernando', 'evo123', 'evolution@gmail.com', '2017-11-26');
+INSERT INTO "users" VALUES ('teste', 'Teste', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'teste@gmail.com', '2017-11-27');
+INSERT INTO "users" VALUES ('jonas', 'Joao', 'ec4f9521638a016fe1652021b9e2877ad1d5cde8', 'jonas@hotmail.com', '2107-11-25');
+INSERT INTO "users" VALUES ('evo', 'Fernando', '1bda07870e85c5b0a56c55b25b8de246f03470e7', 'evolution@gmail.com', '2017-11-26');
 
 
 INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo', '2017-11-26', '2017-11-27');
