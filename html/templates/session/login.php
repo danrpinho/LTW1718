@@ -1,5 +1,5 @@
 <section id="login">
-    <h3>Login</h3>
+    <span class = "login"><h3>Login</h3></span>
     <form action="action_login.php" method="post">
       <input type="text" placeholder="username" name="username">
       <input type="password" placeholder="password" name="password">

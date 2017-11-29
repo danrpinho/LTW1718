@@ -89,27 +89,25 @@ body > section > p{
 body > #login{
     grid-column: span 3;
     display: grid;
-    grid-template-areas: "username   password"
-                         "signin     signup";
+    grid-template-areas: "login"
+                         "signin  "
+                         "signup";
 }
 
 body > #login > form {
     padding: 0 1em 1em 1em;
 }
 
+body > #login > .login {
+    padding: 0 1em 0 1em;
+    grid-area: login;
+}
+
 body > #login > form > .username {
-    grid-area: username;
-}
-
-body > #login > form > .password {
-    grid-area: password;
-}
-
-body > #login > form > #signin {
     grid-area: signin;
 }
 
-body > #login > form > #signup {
+body > #login > form > .signup {
     grid-area: signup;
 }
 
