@@ -3,10 +3,10 @@
     <form action="action_login.php" method="post">
       <input type="text" placeholder="username" name="username">
       <input type="password" placeholder="password" name="password">
-      <input type="submit" value="Login">
+      <input type="submit" name="signin" value="Sign In">
     </form>
     <form action="register.php" method="post">
-        <input type="submit" value="Register">
+        <input type="submit" name="signup" value="Sign Up">
     </form>
 
 </section>

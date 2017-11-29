@@ -26,4 +26,14 @@
         return $stmt->fetchAll();
     }
   }
+
+  function getExpiringLists() {
+      global $dbh;
+      if (isset($_SESSION['username'])) {
+          $date = date("Y-m-d", strtotime("+7 day"));
+          $stmt = $dbh->prepare('SELECT * FROM todolists WHERE date(dataDue) < ?');
+          $stmt->execute(array($date));
+          return $stmt->fetchAll();
+      }
+  }
  ?>

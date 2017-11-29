@@ -6,6 +6,7 @@
     if (isset($_SESSION['username']) && $_SESSION['username'] != '') {
         include_once('html/database/list.php');
         $lists = getAllLists();
+        $expiringLists = getExpiringLists();
         include_once('html/templates/aside/sidebar.php');
         include_once('html/templates/lists/lists.php');
     } else {

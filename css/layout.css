@@ -1,38 +1,50 @@
 body{
     background-color: white;
-    width: 60em;
-    margin: 0 auto;
+    width: auto;
+    margin: 0 1em 1em 1em;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1.1fr 4fr 1fr;
     grid-template-rows: auto;
+    grid-template-areas: "header   header    header"
+                         "sidebar  content   content"
+                         "footer   footer    footer";
 }
 
 /*                  HEADER                  */
+
 body > header{
-    grid-column: span 2;
+    grid-area: header;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto;
+    grid-template-areas: "name   name"
+                         "slogan  login";
     margin-bottom: 1em;
 }
 
 body > header > h1{
-    grid-column: span 2;
+    grid-area: name;
     margin: 1rem auto 0 2rem;
 }
 
 body > header > h2{
-    grid-column: span 2;
-    margin: 0 auto 1rem 2rem;
+    grid-area: slogan;
+    margin: 0 auto 0 2rem;
 }
 
-body > header > #signup{
-    grid-column: span 2;
+body > header > #user{
+    bottom: 0;
+    left: 0;
+    grid-area: login;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em 1em 0.5em 0;
 }
 
 /*                  FOOTER                  */
+
 body > footer{
-    grid-column: span 2;
+    grid-column: span 3;
     margin-top: 1em;
 }
 
@@ -41,23 +53,71 @@ body > footer > p{
 }
 
 /*                  CONTENT                 */
+
 body > #content{
     margin-left: 1em;
-    grid-row: span 2;
+    grid-area: content;
+    display: grid;
+    grid-template-areas: "name      create"
+                         "lists     lists";
 }
 
-body > section > h3{
+body > #content > #name {
     margin-left: 1rem;
+    grid-area: name;
 }
+
+body > #content > #create {
+    margin-right: 1rem;
+    grid-area: create;
+    display: flex;
+    justify-content: flex-end;
+}
+
+body > #content > #lists {
+    margin-left: 1rem;
+    grid-area: lists;
+}
+
 
 body > section > p{
     margin-left: 1rem;
 }
 
-body > #content > h3{
-    margin-left: 1rem;
-}
+/*                  LOGIN                 */
 
 body > #login{
-    grid-column: span 2;
+    grid-column: span 3;
+    display: grid;
+    grid-template-areas: "username   password"
+                         "signin     signup";
+}
+
+body > #login > form {
+    padding: 0 1em 1em 1em;
+}
+
+body > #login > form > .username {
+    grid-area: username;
+}
+
+body > #login > form > .password {
+    grid-area: password;
+}
+
+body > #login > form > #signin {
+    grid-area: signin;
+}
+
+body > #login > form > #signup {
+    grid-area: signup;
+}
+
+
+/*                  SIDEBAR                 */
+
+body > #sidebar{
+    padding: 0 1em 0 1em;
+    grid-area: sidebar;
+    font-size: 0.85em;
 }
