@@ -41,6 +41,10 @@ body #login{
     background-color: #ebdcdc
 }
 
-body > section > h3{
+body > section h3{
     font-family: 'Crete Round', 'slab';
+}
+
+body > section span{
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
 }
