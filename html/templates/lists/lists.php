@@ -8,19 +8,17 @@
           <?php foreach($lists as $list) { ?>
           <article>
             <header>
-              <h3><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['title']?></a></h3>
-              <span class="datecreation">Creation Date: <?=date('Y-m-d', strtotime($list['creation']));?></span>
-              <span class="datedue">Date Due: <?=date('Y-m-d', strtotime($list['datadue']));?></span>
+              <h3 id="title"><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['title']?></a></h3>
+			  <h5 id="descr"><?=$list['descr']?></h5>
+              <p class="datecreation">Creation Date: <?=date('Y-m-d', strtotime($list['creation']));?></span>
             </header>
           </article>
         <?php } ?>
     <?php } else { ?>
         <article>
             <header>
-                <h3>Example</h3>
-                <span class="datecreation">Creation Date: 2017-11-27</span>
-                <br>
-                <span class="datedue">Date Due: 2017-12-03</span>
+                <h3 id="title">Example</h3>
+                <p class="datecreation">Creation Date: 2017-11-27</p>
             </header>
         </article>
     <?php } ?>

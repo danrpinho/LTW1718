@@ -16,7 +16,7 @@ CREATE TABLE todolists(
     username TEXT REFERENCES users,
     title TEXT,
 	descr TEXT,
-    creation DATE,
+    creation DATE
 );
 
 CREATE TABLE listitems(
