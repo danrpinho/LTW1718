@@ -1,13 +1,13 @@
 body{
     background-color: white;
-    width: auto;
-    margin: 1em 1em 1em 1em;
+    width: 60em;
+    margin: 1em auto;
     display: grid;
-    grid-template-columns: 1.1fr 4fr 1fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-rows: auto;
-    grid-template-areas: "header   header    header"
-                         "sidebar  content   content"
-                         "footer   footer    footer";
+    grid-template-areas: "header   header"
+                         "sidebar  content"
+                         "footer   footer";
 }
 
 /*                  HEADER                  */
@@ -90,7 +90,7 @@ body > #login{
     grid-column: span 3;
     display: grid;
     grid-template-areas: "login"
-                         "signin  "
+                         "signin"
                          "signup";
 }
 
