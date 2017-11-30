@@ -1,3 +1,4 @@
+/*                  TABLET                 */
 @media (max-width: 60em){
     body{
         width: 100%;
@@ -5,6 +6,7 @@
     }
 }
 
+/*                  PHONE                 */
 @media (max-width: 30em){
     body{
         display:grid;

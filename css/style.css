@@ -26,7 +26,7 @@ body > footer{
     background-color: #0e7979;
 }
 
-body > footer > p{
+body > footer > p > a{
     color: white;
     text-decoration: none;
     font-family: 'Crete Round', 'slab';
@@ -38,6 +38,10 @@ body #content{
 }
 
 body #login{
+    background-color: #ebdcdc
+}
+
+body #credits{
     background-color: #ebdcdc
 }
 
