@@ -36,4 +36,12 @@
           return $stmt->fetchAll();
       }
   }
+  
+    function addList($title, $description, $date, $datadue) {
+      global $dbh;
+      if (isset($_SESSION['username'])) {
+          $stmt = $dbh->prepare('INSERT INTO todolists (listID, username, title, descr, creation, datadue) VALUES(?, ?, ?, ?, ?, ?)');
+          $stmt->execute(array(NULL, $_SESSION['username'],$title, $description, $date, $datadue));
+      }
+  }
  ?>

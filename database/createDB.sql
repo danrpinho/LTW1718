@@ -15,6 +15,7 @@ CREATE TABLE todolists(
     listID INTEGER PRIMARY KEY,
     username TEXT REFERENCES users,
     title TEXT,
+	descr TEXT,
     creation DATE,
     datadue DATE
 );

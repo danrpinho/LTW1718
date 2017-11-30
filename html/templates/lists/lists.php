@@ -1,13 +1,14 @@
 <section id="content">
-    <span id= "name">Your To-Do Lists</span>
-    <span id= "create">Create New List</span>
+	<header>
+		<h3 id= "name">Your To-Do Lists</h3>
+		<h3 id= "create"><a href="create_new_list.php">Create New List</a></h3>
+	</header>
     <section id="lists">
     <?php if (isset($_SESSION['username']) && $_SESSION['username'] != '') { ?>
           <?php foreach($lists as $list) { ?>
           <article>
             <header>
-              <h3><?=$list['title']?></h3>
-              <h3><a href="consult_list.php?id=<?=$list['listID']?>">Read</a></h3>
+              <h3><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['title']?></a></h3>
               <span class="datecreation">Creation Date: <?=date('Y-m-d', strtotime($list['creation']));?></span>
               <span class="datedue">Date Due: <?=date('Y-m-d', strtotime($list['datadue']));?></span>
             </header>

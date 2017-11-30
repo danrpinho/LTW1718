@@ -5,9 +5,9 @@ INSERT INTO "users" VALUES ('jonas', 'Joao', 'ec4f9521638a016fe1652021b9e2877ad1
 INSERT INTO "users" VALUES ('evo', 'Fernando', '1bda07870e85c5b0a56c55b25b8de246f03470e7', 'evolution@gmail.com', '2017-11-26');
 
 
-INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo', '2017-11-26', '2017-11-27');
-INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo2', '2017-11-27', '2017-11-30');
-INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo3', '2017-11-26', '2017-12-15');
+INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo', 'Verificacao', '2017-11-26', '2017-11-27');
+INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo2', 'Verificacao2', '2017-11-27', '2017-11-30');
+INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo3', 'Verificacao3', '2017-11-26', '2017-12-15');
 
 INSERT INTO "listitems" VALUES ( NULL, 1, 'Verificar se aparece', 0, 'jonas');
 INSERT INTO "listitems" VALUES ( NULL, 1, 'Verificar se aparece2', 0, NULL);
