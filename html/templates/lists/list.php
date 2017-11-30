@@ -3,9 +3,8 @@
         <header>
           <h3 id="title"><?=$list['title']?></h3>
           <h3 id="back"><a href="index.php">Back</a></h3>
-		  <h5 id="descr"><?=$list['descr']?></h5>
           <p class="datecreation">Creation Date: <?=date('Y-m-d', strtotime($list['creation']));?></p>
-          <p class="datedue">Date Due: <?=date('Y-m-d', strtotime($list['datadue']));?></p>
+		  <p id="descr"><?=$list['descr']?></p>
         </header>
         <table>
             <thead>

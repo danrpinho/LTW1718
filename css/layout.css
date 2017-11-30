@@ -1,13 +1,13 @@
 body{
     background-color: white;
-    width: 60em;
-    margin: 1em auto;
+    width: auto;
+    margin: 0 1em 1em 1em;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1.1fr 4fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "header   header"
-                         "sidebar  content"
-                         "footer   footer";
+    grid-template-areas: "header   header    header"
+                         "sidebar  content   content"
+                         "footer   footer    footer";
 }
 
 /*                  HEADER                  */
@@ -29,7 +29,7 @@ body > header > h1{
 
 body > header > h2{
     grid-area: slogan;
-    margin: 0 auto 1rem 2rem;
+    margin: 0 auto 0 2rem;
 }
 
 body > header > #user{
@@ -38,7 +38,7 @@ body > header > #user{
     grid-area: login;
     display: flex;
     justify-content: flex-end;
-    margin: 0 1rem 1rem auto;
+    padding: 1em 1em 0.5em 0;
 }
 
 /*                  FOOTER                  */
@@ -57,18 +57,17 @@ body > footer > p{
 body > #content{
     margin-left: 1em;
     grid-area: content;
-}
-body > #content > header{
     display: grid;
-    grid-template-areas: "name      create";
+    grid-template-areas: "name      create"
+                         "lists     lists";
 }
 
-body > #content > header > #name {
+body > #content > #name {
     margin-left: 1rem;
     grid-area: name;
 }
 
-body > #content > header > #create {
+body > #content > #create {
     margin-right: 1rem;
     grid-area: create;
     display: flex;
@@ -77,6 +76,7 @@ body > #content > header > #create {
 
 body > #content > #lists {
     margin-left: 1rem;
+    grid-area: lists;
 }
 
 
@@ -87,10 +87,10 @@ body > section > p{
 /*                  LOGIN                 */
 
 body > #login{
-    grid-column: span 2;
+    grid-column: span 3;
     display: grid;
     grid-template-areas: "login"
-                         "signin"
+                         "signin  "
                          "signup";
 }
 
@@ -118,13 +118,4 @@ body > #sidebar{
     padding: 0 1em 0 1em;
     grid-area: sidebar;
     font-size: 0.85em;
-}
-
-
-body > #credits{
-    grid-column: span 2;
-    display: grid;
-    grid-template-areas: "login"
-                         "signin"
-                         "signup";
 }

@@ -8,10 +8,6 @@
 		  <input type="textarea" name="description" value="">
 		</label>
 		<br>
-	    <label>Date Due:
-		  <input type="date" name="datedue" value="">
-		</label>
-		<br>
 		<input type="submit" value="Create">
 	</form>
 </section>

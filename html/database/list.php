@@ -27,21 +27,21 @@
     }
   }
 
-  function getExpiringLists() {
+  function getExpiringItems() {
       global $dbh;
       if (isset($_SESSION['username'])) {
           $date = date("Y-m-d", strtotime("+7 day"));
-          $stmt = $dbh->prepare('SELECT * FROM todolists WHERE date(dataDue) < ?');
-          $stmt->execute(array($date));
+          $stmt = $dbh->prepare('SELECT * FROM listitems WHERE assignee = ? AND date(dataDue) < ?');
+          $stmt->execute(array($_SESSION['username'],$date));
           return $stmt->fetchAll();
       }
   }
   
-    function addList($title, $description, $date, $datadue) {
+    function addList($title, $description, $date) {
       global $dbh;
       if (isset($_SESSION['username'])) {
-          $stmt = $dbh->prepare('INSERT INTO todolists (listID, username, title, descr, creation, datadue) VALUES(?, ?, ?, ?, ?, ?)');
-          $stmt->execute(array(NULL, $_SESSION['username'],$title, $description, $date, $datadue));
+          $stmt = $dbh->prepare('INSERT INTO todolists (listID, username, title, descr, creation) VALUES(?, ?, ?, ?, ?)');
+          $stmt->execute(array(NULL, $_SESSION['username'],$title, $description, $date));
       }
   }
  ?>
