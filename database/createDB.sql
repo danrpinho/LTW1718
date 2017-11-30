@@ -17,7 +17,6 @@ CREATE TABLE todolists(
     title TEXT,
 	descr TEXT,
     creation DATE,
-    datadue DATE
 );
 
 CREATE TABLE listitems(
@@ -26,6 +25,7 @@ CREATE TABLE listitems(
     descr TEXT,
     solved INTEGER,
     assignee TEXT REFERENCES users,
+	datadue DATE,
     PRIMARY KEY(id, listID)
 );
 

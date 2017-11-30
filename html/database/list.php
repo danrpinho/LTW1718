@@ -31,7 +31,7 @@
       global $dbh;
       if (isset($_SESSION['username'])) {
           $date = date("Y-m-d", strtotime("+7 day"));
-          $stmt = $dbh->prepare('SELECT * FROM listitems WHERE assignee = ? AND date(dataDue) < ?');
+          $stmt = $dbh->prepare('SELECT * FROM listitems WHERE assignee = ? AND date(datadue) < ?');
           $stmt->execute(array($_SESSION['username'],$date));
           return $stmt->fetchAll();
       }

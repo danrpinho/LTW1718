@@ -4,7 +4,7 @@
         <?php foreach($expiringLists as $list) { ?>
             <ul>
                 <li>
-                    <h4><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['descr']?></a></h4>
+                    <h4><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['title']?></a></h4>
                     <h5><?=$list['datadue']?></h5>
                 </li>
             </ul>

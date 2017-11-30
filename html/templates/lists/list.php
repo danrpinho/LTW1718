@@ -1,10 +1,10 @@
-<section id="content">
-    <article id="list">
+<section id="list">
+    <article>
         <header>
-          <h3 id="title"><?=$list['title']?></h3>
-          <h3 id="back"><a href="index.php">Back</a></h3>
-          <p class="datecreation">Creation Date: <?=date('Y-m-d', strtotime($list['creation']));?></p>
-		  <p id="descr"><?=$list['descr']?></p>
+          <h3><?=$list['title']?></h3>
+          <h3><a href="index.php">Back</a></h3>
+          <span class="datecreation">Creation Date: <?=date('Y-m-d', strtotime($list['creation']));?></span>
+          <span class="datedue">Date Due: <?=date('Y-m-d', strtotime($list['datadue']));?></span>
         </header>
         <table>
             <thead>
@@ -20,5 +20,5 @@
                 </tr>
             <?php } ?>
         </table>
-	</article>
+    </article>
 </section>
