@@ -1,0 +1,157 @@
+body{
+    background-color: white;
+    width: 60em;
+    margin: 1em auto;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto;
+    grid-template-areas: "header   header"
+                         "sidebar  content"
+                         "footer   footer";
+}
+
+/*                  HEADER                  */
+
+body > header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "name   name"
+                         "slogan login";
+    margin-bottom: 1em;
+}
+
+body > header > h1{
+    grid-area: name;
+    margin: 1rem auto 0 2rem;
+}
+
+body > header > h2{
+    grid-area: slogan;
+    margin: 0 auto 1rem 2rem;
+}
+
+body > header > #user{
+    bottom: 0;
+    left: 0;
+    grid-area: login;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 1rem 1rem auto;
+}
+
+/*                  FOOTER                  */
+
+body > footer{
+    grid-column: span 3;
+    margin-top: 1em;
+}
+
+body > footer > p{
+    margin-left: 1rem;
+}
+
+/*                  CONTENT                 */
+
+body > #content{
+    margin-left: 1em;
+    grid-area: content;
+}
+body > #content > header{
+    display: grid;
+    grid-template-areas: "name create";
+}
+
+body > #content > header > #name {
+    margin-left: 1rem;
+    grid-area: name;
+}
+
+body > #content > header > #create {
+    margin-right: 1rem;
+    grid-area: create;
+    display: flex;
+    justify-content: flex-end;
+}
+
+body > #content > #lists {
+    margin-left: 1rem;
+}
+
+body > section > p{
+    margin-left: 1rem;
+}
+
+body > #content > article > header{
+    display: grid;
+    grid-template-areas: "title         back"
+                         "date          date"
+                         "description   description";
+    margin: 1rem;
+}
+
+body > #content > article > header > #title{
+    margin: 0;
+    grid-area: title;
+}
+
+body > #content > article > header > #back{
+    text-align: right;
+    margin-right: 1rem;
+    grid-area: back;
+    margin: 0;
+}
+
+body > #content > article > table{
+    margin: 0 1rem 1rem 1rem;
+    width: 100%
+}
+
+
+/*                  LOGIN                 */
+
+body > #login{
+    grid-area: content;
+    /*grid-column: span 2;*/
+    display: grid;
+    grid-template-areas: "login"
+                         "signin"
+                         "signup";
+}
+
+body > #login > form {
+    padding: 0 1em 1em 1em;
+}
+
+body > #login > .login {
+    padding: 0 1em 0 1em;
+    grid-area: login;
+}
+
+body > #login > form > .username {
+    grid-area: signin;
+}
+
+body > #login > form > .signup {
+    grid-area: signup;
+}
+
+
+/*                  SIDEBAR                 */
+
+body > #sidebar{
+    padding: 0 1em 0 1em;
+    grid-area: sidebar;
+    font-size: 0.85em;
+}
+
+
+body > #credits{
+    grid-area: content;
+    grid-column: span 2;
+    display: grid;
+    grid-template-areas: "login"
+                         "signin"
+                         "signup";
+}

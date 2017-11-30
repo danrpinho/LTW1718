@@ -1,0 +1,58 @@
+/* cores http://www.color-hex.com/color-palette/49801 */
+
+/*                  HEADER                  */
+
+body>header {
+    background-color: #0e7979;
+}
+
+body>header a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Crete Round', 'slab';
+}
+
+body > header h2{
+    font-size: 1.15rem;
+}
+
+body>header>div a {
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+}
+
+/*                  SIDEBAR                 */
+aside {
+    background-color: #e29f9f;
+}
+
+/*                  FOOTER                  */
+body > footer{
+    background-color: #0e7979;
+}
+
+body > footer > p > a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Crete Round', 'slab';
+}
+
+/*                  MAIN CONTENT            */
+body #content{
+    background-color: #ebdcdc
+}
+
+body #login{
+    background-color: #ebdcdc
+}
+
+body #credits{
+    background-color: #ebdcdc
+}
+
+body > section h3{
+    font-family: 'Crete Round', 'slab';
+}
+
+body > section span{
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+}
