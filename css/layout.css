@@ -18,7 +18,7 @@ body > header{
     grid-template-columns: auto 1fr;
     grid-template-rows: auto;
     grid-template-areas: "name   name"
-                         "slogan  login";
+                         "slogan login";
     margin-bottom: 1em;
 }
 
@@ -60,7 +60,7 @@ body > #content{
 }
 body > #content > header{
     display: grid;
-    grid-template-areas: "name      create";
+    grid-template-areas: "name create";
 }
 
 body > #content > header > #name {
@@ -79,15 +79,41 @@ body > #content > #lists {
     margin-left: 1rem;
 }
 
-
 body > section > p{
     margin-left: 1rem;
 }
 
+body > #content > article > header{
+    display: grid;
+    grid-template-areas: "title         back"
+                         "date          date"
+                         "description   description";
+    margin: 1rem;
+}
+
+body > #content > article > header > #title{
+    margin: 0;
+    grid-area: title;
+}
+
+body > #content > article > header > #back{
+    text-align: right;
+    margin-right: 1rem;
+    grid-area: back;
+    margin: 0;
+}
+
+body > #content > article > table{
+    margin: 0 1rem 1rem 1rem;
+    width: 100%
+}
+
+
 /*                  LOGIN                 */
 
 body > #login{
-    grid-column: span 2;
+    grid-area: content;
+    /*grid-column: span 2;*/
     display: grid;
     grid-template-areas: "login"
                          "signin"
@@ -122,6 +148,7 @@ body > #sidebar{
 
 
 body > #credits{
+    grid-area: content;
     grid-column: span 2;
     display: grid;
     grid-template-areas: "login"

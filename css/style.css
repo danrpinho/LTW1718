@@ -12,6 +12,10 @@ body>header a {
     font-family: 'Crete Round', 'slab';
 }
 
+body > header h2{
+    font-size: 1.15rem;
+}
+
 body>header>div a {
     font-family: 'Barlow Semi Condensed', 'sans-serif';
 }
