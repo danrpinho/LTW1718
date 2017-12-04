@@ -12,5 +12,13 @@
     </section>
     <section id="overdue">
         <h3>These items are overdue!</h3>
+        <?php foreach($expiredLists as $expiredList) { ?>
+            <ul>
+                <li>
+                    <h4 id="itemdescr"><a href="consult_list.php?id=<?=$expiredList['listID']?>"><?=$expiredList['descr']?></a></h4>
+                    <h5 id="datadue"><?=$expiredList['datadue']?></h5>
+                </li>
+            </ul>
+        <?php } ?>
     </section>
 </aside>

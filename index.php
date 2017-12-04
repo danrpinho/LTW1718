@@ -7,6 +7,7 @@
         include_once('html/database/list.php');
         $lists = getAllLists();
         $expiringLists = getExpiringItems();
+        $expiredLists = getExpiringItems();
         include_once('html/templates/aside/sidebar.php');
         include_once('html/templates/lists/lists.php');
     } else {
