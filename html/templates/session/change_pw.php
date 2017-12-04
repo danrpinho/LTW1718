@@ -1,4 +1,5 @@
-<section id="content">
+<section class="content">
+  <article id="change_password">
   <h3>Change password</h3>
   <form action="change_password.php" method="post">
     <label>Current password:
@@ -15,4 +16,5 @@
 
     <input type="submit" value="Submit">
   </form>
+  </article>
 </section>

@@ -37,15 +37,11 @@ body > footer > p > a{
 }
 
 /*                  MAIN CONTENT            */
-body #content{
+body .content{
     background-color: #ebdcdc
 }
 
-body #login{
-    background-color: #ebdcdc
-}
-
-body #credits{
+body .session{
     background-color: #ebdcdc
 }
 

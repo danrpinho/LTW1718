@@ -1,4 +1,5 @@
-<section id="content">
+<section class="content">
+    <article id="user_settings">
     <h3>Account settings</h3>
     <p>What would you like to do?</p>
     <ul>
@@ -7,4 +8,5 @@
         <li><a href="change_email.php">Update e-mail address</a></li>
         <li><a href="">Change personal details</a></li>
     </ul>
+    </article>
 </section>

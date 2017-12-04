@@ -1,5 +1,5 @@
-<section id="list">
-    <article>
+<section class="content">
+    <article id="list">
         <header>
           <h3 id="title"><?=$list['title']?></h3>
           <h3 id="back"><a href="index.php">Back</a></h3>

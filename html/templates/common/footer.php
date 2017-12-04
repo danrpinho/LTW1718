@@ -1,5 +1,5 @@
         <footer>
-          <p>&copy; To-Do Lists, 2017</p>
+          <p><a href="credits.php">&copy; To-Do Lists, 2017</a></p>
         </footer>
     </body>
 </html>

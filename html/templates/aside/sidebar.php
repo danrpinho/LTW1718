@@ -1,4 +1,4 @@
-<aside id="sidebar">
+<aside class="sidebar">
     <section id="due">
         <h3>These items are almost due!</h3>
         <?php foreach($expiringLists as $expiringlist) { ?>
@@ -9,5 +9,8 @@
                 </li>
             </ul>
         <?php } ?>
+    </section>
+    <section id="overdue">
+        <h3>These items are overdue!</h3>
     </section>
 </aside>
