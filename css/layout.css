@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-color: #E0E4CC;
     width: 60em;
     margin: 1em auto;
     display: grid;
@@ -52,63 +52,105 @@ body>footer>p {
 }
 
 
-/*                  CONTENT                 */
+/*              CONTENT-GENERIC             */
 
 body>.content {
     margin-left: 1em;
     grid-area: content;
 }
 
-body>.content>header {
-    display: grid;
-    grid-template-areas: "name create";
-}
-
-body>.content>header>#name {
-    margin-left: 1rem;
-    grid-area: name;
-}
-
-body>.content>header>#create {
-    margin-right: 1rem;
-    grid-area: create;
-    display: flex;
-    justify-content: flex-end;
-}
-
-body>.content>#lists {
+body>section >p {
     margin-left: 1rem;
 }
 
-body>section>p {
-    margin-left: 1rem;
-}
 
-body>.content>article>header {
+
+/*              CONTENT-LIST              */
+body>.content>#list>header {
     display: grid;
     grid-template-areas:
-        "title         back"
-        "date          date"
-        "description   description";
+        "title  back"
+        "date   date"
+        "desc   desc";
     margin: 1rem;
 }
 
-body>.content>article>header>#title {
+body>.content> #list >header>.title {
     margin: 0;
     grid-area: title;
 }
 
-body>.content>article>header>#back {
+body>.content> #list >header>.back {
     text-align: right;
     margin-right: 1rem;
     grid-area: back;
     margin: 0;
 }
 
+body > .content > #list > header > .datecreation {
+    margin: 0.125rem 0;
+    grid-area: date;
+    font-size: 0.75rem;
+}
+
+body > .content > #list > header > .descr {
+    margin: 0;
+    grid-area: desc;
+    text-align: justify;
+}
+
 body>.content>article>table {
     margin: 0 1rem 1rem 1rem;
     width: 100%
 }
+
+body > .content > #list > table p{
+    margin: 0;
+}
+
+
+/*              CONTENT-LISTS             */
+body > .content > #lists > header {
+    margin: 1rem 1rem;
+    display: grid;
+    grid-template-areas: "name create";
+}
+
+body > .content > #lists > section {
+    margin: 1rem;
+}
+
+
+body>.content > #lists > header > #name {
+    margin: 0;
+    grid-area: name;
+}
+
+body>.content> #lists > header>#create {
+    margin: 0;
+    grid-area: create;
+    display: flex;
+    justify-content: flex-end;
+}
+
+body > .content > #lists > section > article{
+    margin:1rem 0;
+}
+
+body > .content > #lists > section > article > .title{
+    margin: 0;
+}
+
+body > .content > #lists > section > article > .descr{
+    margin: 0;
+}
+
+body > .content > #lists > section > article > .datecreation{
+    margin: 0.125rem 0;
+    font-size: 0.75rem;
+
+}
+
 
 
 /*                  LOGIN                 */

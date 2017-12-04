@@ -1,4 +1,6 @@
-/* cores http://www.color-hex.com/color-palette/49801 */
+/*      cores http://www.color-hex.com/color-palette/49801
+        http://www.colourlovers.com/palette/92095/Giant_Goldfish    */
+
 
 /*                  HEADER                  */
 
@@ -12,7 +14,7 @@ body>header a {
     font-family: 'Crete Round', 'slab';
 }
 
-body > header h2{
+body>header h2 {
     font-size: 1.15rem;
 }
 
@@ -20,35 +22,77 @@ body>header>div a {
     font-family: 'Barlow Semi Condensed', 'sans-serif';
 }
 
+
 /*                  SIDEBAR                 */
+
 aside {
-    background-color: #e29f9f;
+    background-color: #F38630;
+    padding: 0 0 0 0;
+}
+
+aside > section{
+    margin: 0.75rem;
+}
+
+aside > section > h3{
+    margin: 0;
+    font-family: 'Crete Round', 'slab';
+}
+
+aside > section > ul p{
+    margin: 0;
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+}
+
+/*aside > section > ul p.itemdescr{
+    font-weight: bold;
+}*/
+
+aside > section > ul p.datadue{
+    font-size: 0.75rem;
 }
 
 /*                  FOOTER                  */
-body > footer{
+
+body>footer {
     background-color: #0e7979;
 }
 
-body > footer > p > a{
+body>footer>p>a {
     color: white;
     text-decoration: none;
     font-family: 'Crete Round', 'slab';
 }
 
+
 /*                  MAIN CONTENT            */
-body .content{
-    background-color: #ebdcdc
+
+body .content {
+    background-color: #69D2E7;
 }
 
-body .session{
-    background-color: #ebdcdc
+body .session {
+    background-color: #69D2E7;
 }
 
-body > section h3{
+body>section h3 {
     font-family: 'Crete Round', 'slab';
 }
 
-body > section span{
+body>section h4>a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Crete Round', 'slab';
+}
+
+body>section p {
     font-family: 'Barlow Semi Condensed', 'sans-serif';
+}
+
+body>section>td {
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+}
+
+body .datecreation{
+    font-style: italic;
 }

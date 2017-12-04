@@ -1,22 +1,22 @@
 <section class="content">
     <article id="list">
         <header>
-          <h3 id="title"><?=$list['title']?></h3>
-          <h3 id="back"><a href="index.php">Back</a></h3>
-          <p id="datecreation">Creation Date: <?=date('Y-m-d', strtotime($list['creation']));?></p>
-		  <p id="descr"><?=$list['descr']?></p>
+          <h3 class="title"><?=$list['title']?></h3>
+          <h3 class="back"><a href="index.php">Back</a></h3>
+          <p class="datecreation">Created on <?=date('F d, Y', strtotime($list['creation']));?></p>
+		  <p class="descr"><?=$list['descr']?></p>
         </header>
         <table>
             <thead>
               <tr>
-                <th>Description</th><th>Assigneed</th><th>Data Due</th><th>Solved</th>
+                <th><p>Description</p></th><th><p>Assigneed</p></th><th><p>Data Due</p></th><th><p>Solved</p></th>
               </tr>
             </thead>
             <?php foreach($items as $item) { ?>
                 <tr>
-                    <td><?=$item['descr']?></td>
-                    <td><?=$item['assignee']?></td>
-					<td><?=$item['datadue']?></td>
+                    <td><p><?=$item['descr']?></p></td>
+                    <td><p><?=$item['assignee']?></p></td>
+					<td><p><?=$item['datadue']?></p></td>
                     <td><input type="checkbox" name="solved" value=<?=$item['solved']?>></td>
                 </tr>
             <?php } ?>

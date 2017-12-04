@@ -8,11 +8,9 @@
         <?php if (isset($_SESSION['username']) && $_SESSION['username'] != '') { ?>
             <?php foreach($lists as $list) { ?>
             <article>
-                <header>
-                    <h4 id="title"><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['title']?></a></h4>
-                    <p class="datecreation">Creation Date: <?=date('Y-m-d', strtotime($list['creation']));?></span>
-			        <p id="descr"><?=$list['descr']?></p>
-                </header>
+                <h4 class="title"><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['title']?></a></h4>
+                <p class="datecreation">Created on <?=date('F d, Y', strtotime($list['creation']));?></span>
+			    <p class="descr"><?=$list['descr']?></p>
             </article>
             <?php } ?>
         <?php } else { ?>

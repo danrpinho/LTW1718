@@ -4,8 +4,8 @@
         <?php foreach($expiringLists as $expiringlist) { ?>
             <ul>
                 <li>
-                    <h4 id="itemdescr"><a href="consult_list.php?id=<?=$expiringlist['listID']?>"><?=$expiringlist['descr']?></a></h4>
-                    <h5 id="datadue"><?=$expiringlist['datadue']?></h5>
+                    <p class="itemdescr"><a href="consult_list.phpclass=<?=$expiringlist['listID']?>"><?=$expiringlist['descr']?></a></p>
+                    <p class="datadue"><?=$expiringlist['datadue']?></p>
                 </li>
             </ul>
         <?php } ?>
@@ -15,8 +15,8 @@
         <?php foreach($expiredLists as $expiredList) { ?>
             <ul>
                 <li>
-                    <h4 id="itemdescr"><a href="consult_list.php?id=<?=$expiredList['listID']?>"><?=$expiredList['descr']?></a></h4>
-                    <h5 id="datadue"><?=$expiredList['datadue']?></h5>
+                    <p class="itemdescr"><a href="consult_list.php?id=<?=$expiredList['listID']?>"><?=$expiredList['descr']?></a></p>
+                    <p class="datadue"><?=$expiredList['datadue']?></p>
                 </li>
             </ul>
         <?php } ?>
