@@ -5,7 +5,7 @@
 
   $lists = getAllLists();
   $expiringLists = getExpiringItems();
-  $expiredLists = getExpiringItems();
+  $expiredLists = getExpiredItems();
 
   include_once('html/templates/common/header.php');
   include_once('html/templates/aside/sidebar.php');
