@@ -5,7 +5,7 @@
             <ul>
                 <li>
                     <p class="itemdescr"><a href="consult_list.phpclass=<?=$expiringlist['listID']?>"><?=$expiringlist['descr']?></a></p>
-                    <p class="datadue"><?=$expiringlist['datadue']?></p>
+                    <p class="datedue"><?=$expiringlist['datedue']?></p>
                 </li>
             </ul>
         <?php } ?>
@@ -16,7 +16,7 @@
             <ul>
                 <li>
                     <p class="itemdescr"><a href="consult_list.php?id=<?=$expiredList['listID']?>"><?=$expiredList['descr']?></a></p>
-                    <p class="datadue"><?=$expiredList['datadue']?></p>
+                    <p class="datedue"><?=$expiredList['datedue']?></p>
                 </li>
             </ul>
         <?php } ?>

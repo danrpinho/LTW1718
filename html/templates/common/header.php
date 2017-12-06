@@ -7,6 +7,8 @@
         <link href="css/style.css" rel="stylesheet">
         <link href="css/layout.css" rel="stylesheet">
         <link href="css/responsive.css" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="javascript/add_item_list.js" defer></script>
     </head>
     <body>
         <header>

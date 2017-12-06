@@ -8,6 +8,7 @@
         $lists = getAllLists();
         $expiringLists = getExpiringItems();
         $expiredLists = getExpiringItems();
+        print_r($expiredLists);
         include_once('html/templates/aside/sidebar.php');
         include_once('html/templates/lists/lists.php');
     } else {

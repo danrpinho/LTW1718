@@ -25,7 +25,7 @@ CREATE TABLE listitems(
     descr TEXT,
     solved INTEGER,
     assignee TEXT REFERENCES users,
-	datadue DATE,
+	  datedue DATE,
     PRIMARY KEY(id, listID)
 );
 
