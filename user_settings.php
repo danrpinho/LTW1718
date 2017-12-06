@@ -6,7 +6,7 @@
     if (isset($_SESSION['username']) && $_SESSION['username'] != '') {
         include_once('html/database/list.php');
         $expiringLists = getExpiringItems();
-        $expiredLists = getExpiringItems();
+        $expiredLists = getExpiredItems();
         include_once('html/templates/aside/sidebar.php');
         include_once('html/templates/session/user_settings.php');
     } else {
