@@ -57,20 +57,23 @@
     }
 
 
-    function addItem($listID, $description, $solved, $assigneed, $datedue) {
+    function addItem($id, $listID, $description, $solved, $assigneed, $datedue) {
         global $dbh;
         if (isset($_SESSION['username'])) {
           $stmt = $dbh->prepare('INSERT INTO listitems (id, listID, descr, solved, assignee, datedue) VALUES(?, ?, ?, ?, ?, ?)');
-          $stmt->execute(array(NULL, $listID, $description, $solved, $assigneed, $datedue));
-      }
+          $stmt->execute(array($id, $listID, $description, $solved, $assigneed, $datedue));
+        }
     }
 
 
-    function getItemsAfterId($id, $item_id) {
+    function getItemsAfterId($listID, $itemid) {
       global $db;
-      $stmt = $db->prepare('SELECT * FROM listitems WHERE listID = ? AND id > ?');
-      $stmt->execute(array($id, $item_id));
-      return $stmt->fetchAll();
+      if (isset($_SESSION['username'])) {
+        $stmt = $db->prepare('SELECT * FROM listitems WHERE id > ? AND listID = ? AND listID = (SELECT listID FROM todolists WHERE username = ?)');
+        $stmt->execute(array($itemid, $listID, $_SESSION['username']));
+        $return = $stmt->fetchAll();
+        print_r($return); return $return;
+      }
     }
 
 ?>

@@ -109,8 +109,8 @@ body > .content > #list > header > .descr {
     text-align: justify;
 }
 
-body>.content > #list > header > .listid {
-    display: none;
+body>.content > #list > .itemid {
+  display: none;
 }
 
 body>.content>article>table {

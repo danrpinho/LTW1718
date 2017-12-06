@@ -9,5 +9,5 @@ INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo', 'Verificacao', '2017-
 INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo2', 'Verificacao2', '2017-11-27');
 INSERT INTO "todolists" VALUES ( NULL, 'teste', 'Exemplo3', 'Verificacao3', '2017-11-26');
 
-INSERT INTO "listitems" VALUES ( NULL, 1, 'Verificar se aparece', 0, 'jonas', '2017-12-01');
-INSERT INTO "listitems" VALUES ( NULL, 1, 'Verificar se aparece2', 0, 'teste', '2017-12-02');
+INSERT INTO "listitems" VALUES ( 1, 1, 'Verificar se aparece', 0, 'jonas', '2017-12-01');
+INSERT INTO "listitems" VALUES ( 2, 1, 'Verificar se aparece2', 0, 'teste', '2017-12-02');

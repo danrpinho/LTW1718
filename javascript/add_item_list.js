@@ -1,6 +1,8 @@
 let form = document.getElementById('addlist');
 let table = document.getElementById('tablelist');
-form.addEventListener('submit', submitItem);
+if(form) {
+  form.addEventListener('submit', submitItem);
+}
 
 function encodeForAjax(data) {
   return Object.keys(data).map(function(k){
@@ -14,8 +16,7 @@ function submitItem(event) {
   let assigneed = document.querySelector('input[name=assigneed]').value;
   let datedue = document.querySelector('input[name=datedue]').value;
   let listid = document.querySelector('input[name=id]').value;
-  let itemid = document.querySelector('#addlist .tablerow') != null ? document.querySelector('#addlist .tablerow:last-of-type tr.id').textContent : -1;
-
+  let itemid = document.querySelector('#list #tablelist') != null ? document.querySelector('#list .itemid:last-of-type').textContent : -1;
   let request = new XMLHttpRequest();
   request.addEventListener('load', receiveItems);
   request.open('POST', 'api_add_item.php', true);

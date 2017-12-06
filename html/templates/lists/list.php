@@ -4,7 +4,7 @@
           <h3 class="title"><?=$list['title']?></h3>
           <h3 class="back"><a href="index.php">Back</a></h3>
           <p class="datecreation">Created on <?=date('F d, Y', strtotime($list['creation']));?></p>
-		  <p class="descr"><?=$list['descr']?></p>
+		      <p class="descr"><?=$list['descr']?></p>
         </header>
         <table id= "tablelist">
             <thead>
@@ -13,12 +13,12 @@
               </tr>
             </thead>
             <?php foreach($items as $item) { ?>
-                <tr class="tablerow">
+                <tr>
                     <td><p><?=$item['descr']?></p></td>
                     <td><p><?=$item['assignee']?></p></td>
 					          <td><p><?=$item['datedue']?></p></td>
-                    <td class="commentid"><?=$item['id']?></span>
                     <td><input type="checkbox" name="solved" value=<?=$item['solved']?>></td>
+                    <span class="itemid"><?=$item['id']?></span>
                 </tr>
             <?php } ?>
         </table>

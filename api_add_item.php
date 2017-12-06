@@ -8,10 +8,9 @@
   $solved = 0;
   $assigneed = $_POST['assigneed'];
   $datedue = $_POST['datedue'];
-  echo $datedue;
-  addItem($itemid, $listid, $description, $solved, $assigneed, $datedue);
+  $newitemid = $itemid + 1;
+  addItem($newitemid, $listid, $description, $solved, $assigneed, $datedue);
 
-  $lists = getItemsAfterId($id, $itemid);
-  print_r($lists);
+  $lists = getItemsAfterId($listid, $itemid);
   echo json_encode($lists);
 ?>
