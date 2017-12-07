@@ -51,8 +51,8 @@ body>header>#user {
     margin: 0 1rem 1rem auto;
 }
 
-body > header > #user > form{
-    margin:0;
+body>header>#user>form {
+    margin: 0;
 }
 
 
@@ -138,36 +138,43 @@ body>.content>#list>.itemid {
     display: none;
 }
 
-body > .content > #list > #listitems{
+body>.content>#list>#listitems {
     margin: 1rem;
 }
 
-body > .content > #list > #listitems  span{
+body>.content>#list>#listitems p{
+    margin: 0.25rem 0;
+}
+
+body>.content>#list>#listitems span {
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr 0.8fr;
+    grid-template-columns: 5fr 1fr 1fr 0.6fr;
     text-align: center;
 }
 
-body > .content > #list > #listitems > span > .itemid{
+body>.content>#list>#listitems>span>.itemid {
     display: none;
 }
 
-body > .content > #list > #listitems > .tableheader > p{
+body>.content>#list>#listitems>.tableheader>p {
     font-weight: bold;
 }
 
-body > .content > #list > #listitems > span > .descr{
+body>.content>#list>#listitems>span>.descr {
     text-align: left;
 }
 
-/*body>.content>article>table {
-    margin: 0 1rem 1rem 1rem;
-    width: 100%
+body>.content>#list>#listitems>form{
+    margin:0;
 }
 
-body>.content>#list>table p {
-    margin: 0;
-}*/
+body>.content>#list>#listitems>form input{
+    margin:0.25rem;
+}
+
+#assignee{
+    min-width: 20px;
+}
 
 
 /*              CONTENT-LISTS             */
@@ -196,19 +203,25 @@ body>.content>#lists>header>#create {
 
 body>.content>#lists>section>article {
     margin: 1rem 0;
+    display: grid;
+    grid-template-areas: "info remove"
 }
 
-body>.content>#lists>section>article>.title {
+body>.content>#lists>section>article .title {
     margin: 0;
 }
 
-body>.content>#lists>section>article>.descr {
+body>.content>#lists>section>article .descr {
     margin: 0;
 }
 
-body>.content>#lists>section>article>.datecreation {
+body>.content>#lists>section>article .datecreation {
     margin: 0.125rem 0;
     font-size: 0.75rem;
+}
+
+body>.content>#lists>section>article>form {
+    margin: auto 0 auto auto;
 }
 
 
@@ -230,57 +243,51 @@ body>.session>form {
     padding: 0;
 }
 
-body > .session > article {
+body>.session>article {
     margin: auto;
 }
 
-body > .session > article > h3 {
+body>.session>article>h3 {
     margin: 1rem;
 }
 
-body > .session > #login > form{
+body>.session>#login>form {
     display: grid;
     grid-template-areas: "username password" "login register";
 }
 
-body > .session > #login > form > .username{
+body>.session>#login>form>.username {
     grid-area: username;
     margin: 0 0.15rem;
 }
 
-body > .session > #login > form > .password{
+body>.session>#login>form>.password {
     grid-area: password;
     margin: 0 0.15rem;
 }
 
-body > .session > #login > form > .login{
+body>.session>#login>form>.login {
     grid-area: login;
     margin: 1rem 2.5rem 0.5rem;
 }
 
-body > .session > #login > form > .register{
+body>.session>#login>form>.register {
     grid-area: register;
     margin: 1rem 2.5rem 0.5rem;
 }
 
-/*body>.session>form>.username {
-    grid-area: signin;
-}
-
-body>.session>form>.signup {
-    grid-area: signup;
-
-
-}*/
 
 /*                  SIDEBAR                 */
+
 body>aside.sidebar {
     padding: 0;
     grid-area: sidebar;
     font-size: 0.85em;
 }
 
+
 /*                  CREDITS                 */
+
 body>.credits {
     grid-column: span 2;
     display: grid;

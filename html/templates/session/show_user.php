@@ -7,19 +7,19 @@
         <ul>
             <li>
                 <h4>Username: </h4>
-                <p></p>
+                <p><?=$user['username']?></p>
             </li>
             <li>
                 <h4>Name: </h4>
-                <p></p>
+                <p><?=$user['fullname']?></p>
             </li>
             <li>
                 <h4>E-mail address: </h4>
-                <p></p>
+                <p><?=$user['email']?></p>
             </li>
             <li>
                 <h4>Join date: </h4>
-                <p></p>
+                <p><?=$user['joined']?></p>
             </li>
         </ul>
     </article>

@@ -11,4 +11,11 @@
       $stmt = $dbh->prepare('INSERT INTO users(username, fullname, pword, email, joined) VALUES(?, ?, ?, ?, ?)');
       $stmt->execute(array($username, $fullname, sha1($password), $email, $date));
   }
+
+  function getUser($username){
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE username = ?');
+    $stmt->execute(array($username));
+    return $stmt->fetch();
+  }
 ?>

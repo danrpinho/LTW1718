@@ -44,6 +44,11 @@ aside > section > ul p{
     font-family: 'Barlow Semi Condensed', 'sans-serif';
 }
 
+aside a{
+    text-decoration: none;
+    color: black;
+}
+
 /*aside > section > ul p.itemdescr{
     font-weight: bold;
 }*/
@@ -81,6 +86,16 @@ body>section h4>a {
     font-family: 'Crete Round', 'slab';
 }
 
+body>section .back>a{
+    color:black;
+    text-decoration: none;
+}
+
+body>section #create>a{
+    color:black;
+    text-decoration: none;
+}
+
 body>section p {
     font-family: 'Barlow Semi Condensed', 'sans-serif';
 }
@@ -91,4 +106,14 @@ body>section>td {
 
 body .datecreation{
     font-style: italic;
+}
+
+body > .content ul > li{
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+}
+
+
+body > .content ul > li > a{
+    text-decoration: none;
+    color: black;
 }

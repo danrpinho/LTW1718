@@ -8,9 +8,11 @@
         <?php if (isset($_SESSION['username']) && $_SESSION['username'] != '') { ?>
             <?php foreach($lists as $list) { ?>
             <article>
-                <h4 class="title"><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['title']?></a></h4>
-                <p class="datecreation">Created on <?=date('F d, Y', strtotime($list['creation']));?></span>
-			          <p class="descr"><?=$list['descr']?></p>
+                <span class="info">
+                    <h4 class="title"><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['title']?></a></h4>
+                    <p class="datecreation">Created on <?=date('F d, Y', strtotime($list['creation']));?> by <?=$list['username']?></span>
+                    <p class="descr"><?=$list['descr']?></p>
+                </span>
 				<form action="action_remove_list.php?id=<?=$list['listID']?>" method="post">
 					<input type="submit" value="Remove">
 				</form>

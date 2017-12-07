@@ -7,6 +7,44 @@
     }
 }
 
+/*              FIXING LISTS              */
+@media (max-width: 47em){
+    body>.content>#list>#listitems>.tableheader{
+        display: none;
+    }
+
+    body>.content>#list>#listitems>.tableitem{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    body>.content>#list>#listitems>.tableitem>.assignee::before{
+        content: "Assigned to ";
+    }
+
+    body>.content>#list>#listitems>.tableitem>.due::before{
+        content: "Due on ";
+    }
+
+    body>.content>#list>#listitems>.tableitem>.descr{
+        font-weight: bold;
+    }
+
+    body>.content>#list>#listitems>.tableitem>input>::first-child::before{
+        content: "Solved:";
+    }
+
+    body>.content>#list>#listitems>.tableitem>input{
+        margin:0 auto 0 0;
+    }
+
+    body>.content>#list>#listitems .newitem{
+        display:flex;
+        flex-direction: column;
+    }
+}
+
 
 /*                  PHONE                 */
 
@@ -33,10 +71,19 @@
     }
     body>.content {
         display: block;
+        grid-area: content;
         margin: 0;
     }
     body>.session {
         display: block;
+        grid-area: content;
         margin: 0;
     }
+
+    body>.credits {
+        display: block;
+        grid-area: content;
+        margin: 0;
+    }
+
 }
