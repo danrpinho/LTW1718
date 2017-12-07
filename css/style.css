@@ -117,3 +117,13 @@ body > .content ul > li > a{
     text-decoration: none;
     color: black;
 }
+
+/*              FORMS            */
+body >  section >article .requiredfields{
+    font-style: italic;
+}
+
+body > section form > label{
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+
+}

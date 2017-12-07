@@ -5,18 +5,18 @@
             <h3 class="back"><a href="user_settings.php">Back</a></h3>
         </header>
         <form action="change_password.php" method="post">
-            <label>Current password:
+            <label>Current password<br>
                 <input type="password" name="currentpassword" value="">
             </label>
-
-            <label>New password:
+            <br>
+            <label>New password<br>
                 <input type="password" name="newpassword" value="">
             </label>
-
-            <label>Confirm new password:
+            <br>
+            <label>Confirm new password<br>
                 <input type="password" name="confirm" value="">
             </label>
-
+            <br>
             <input type="submit" value="Submit">
         </form>
     </article>
