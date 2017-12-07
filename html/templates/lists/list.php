@@ -24,9 +24,9 @@
         </table>
         <?php if($_SESSION['username'] == $list['username']) {?>
         <form id= "addlist" action="#" method="get">
-            <input type="text" placeholder="description" value="Description" required>
-            <input type="text" placeholder="assigneed" value="Assigneed" required>
-            <input type="date" placeholder="datedue" value"Date due" required>
+            <input type="text" name="description"placeholder="description" required>
+            <input type="text" name="assigneed" placeholder="assigneed" required>
+            <input type="date" name="datedue" placeholder="datedue" required>
             <input type="hidden" name="id" value="<?=$list['listID']?>">
             <input type="submit" value="Add">
         </form>

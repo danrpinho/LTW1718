@@ -19,7 +19,7 @@
             <?php foreach($expiringLists as $expiringlist) { ?>
                 <ul>
                     <li>
-                        <p class="itemdescr"><a href="consult_list.php?id=<?=$expiringlist['listID']?>"><?=$expiringlist['descr']?></a></p>
+                        <p class="itemdescr"><a href="consult_list.phpclass=<?=$expiringlist['listID']?>"><?=$expiringlist['descr']?></a></p>
                         <p class="datedue"><?=$expiringlist['datedue']?></p>
                     </li>
                 </ul>

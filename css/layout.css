@@ -1,22 +1,25 @@
-html { height: 100%; }
+html {
+    height: 100%;
+}
 
 body {
     background-color: #E0E4CC;
-    width: 60em;
+    width: 70em;
     margin: 1em auto;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: auto;
     grid-template-areas: "header   header" "sidebar  content" "footer   footer";
-    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3.70fr auto;
 }
-form .addlist{
-  display: flex;
-  justify-content: space-between;
-  color: white;
-  padding: 1em;
-  margin-top: 1em;
+
+form .addlist {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 1em;
+    margin-top: 1em;
 }
+
 
 /*                  HEADER                  */
 
@@ -27,7 +30,6 @@ body>header {
     grid-template-rows: auto;
     grid-template-areas: "name   name" "slogan login";
     margin-bottom: 1em;
-
 }
 
 body>header>h1 {
@@ -47,6 +49,10 @@ body>header>#user {
     display: flex;
     justify-content: flex-end;
     margin: 0 1rem 1rem auto;
+}
+
+body > header > #user > form{
+    margin:0;
 }
 
 
@@ -69,48 +75,67 @@ body>.content {
     grid-area: content;
 }
 
-body>section >p {
+body>section>p {
     margin-left: 1rem;
 }
 
-
-
-/*              CONTENT-LIST              */
-body>.content>#list>header {
+body>.content>article>header {
     display: grid;
-    grid-template-areas:
-        "title  back"
-        "date   date"
-        "desc   desc";
+    grid-template-areas: "title back";
     margin: 1rem;
 }
 
-body>.content> #list >header>.title {
+body>.content>article>header>.title {
     margin: 0;
     grid-area: title;
 }
 
-body>.content> #list >header>.back {
+body>.content>article>header>.back {
     text-align: right;
     margin-right: 1rem;
     grid-area: back;
     margin: 0;
 }
 
-body > .content > #list > header > .datecreation {
+body>.content>article>p {
+    margin: 1rem;
+}
+
+
+/*              CONTENT-LIST              */
+
+body>.content>#list>header {
+    display: grid;
+    grid-template-areas: "title  back" "date   date" "desc   desc";
+    margin: 1rem;
+}
+
+body>.content>#list>header>.title {
+    margin: 0;
+    grid-area: title;
+}
+
+body>.content>#list>header>.back {
+    text-align: right;
+    margin-right: 1rem;
+    grid-area: back;
+    margin: 0;
+}
+
+body>.content>#list>header>.datecreation {
     margin: 0.125rem 0;
     grid-area: date;
     font-size: 0.75rem;
 }
 
-body > .content > #list > header > .descr {
+body>.content>#list>header>.descr {
     margin: 0;
     grid-area: desc;
     text-align: justify;
 }
 
-body>.content > #list > .itemid {
-  display: none;
+body>.content>#list>.itemid {
+    display: none;
 }
 
 body>.content>article>table {
@@ -118,53 +143,58 @@ body>.content>article>table {
     width: 100%
 }
 
-body > .content > #list > table p{
+body>.content>#list>table p {
     margin: 0;
 }
 
 
 /*              CONTENT-LISTS             */
-body > .content > #lists > header {
+
+body>.content>#lists>header {
     margin: 1rem 1rem;
     display: grid;
     grid-template-areas: "name create";
 }
 
-body > .content > #lists > section {
+body>.content>#lists>section {
     margin: 1rem;
 }
 
-
-body>.content > #lists > header > #name {
+body>.content>#lists>header>#name {
     margin: 0;
     grid-area: name;
 }
 
-body>.content> #lists > header>#create {
+body>.content>#lists>header>#create {
     margin: 0;
     grid-area: create;
     display: flex;
     justify-content: flex-end;
 }
 
-body > .content > #lists > section > article{
-    margin:1rem 0;
+body>.content>#lists>section>article {
+    margin: 1rem 0;
 }
 
-body > .content > #lists > section > article > .title{
+body>.content>#lists>section>article>.title {
     margin: 0;
 }
 
-body > .content > #lists > section > article > .descr{
+body>.content>#lists>section>article>.descr {
     margin: 0;
 }
 
-body > .content > #lists > section > article > .datecreation{
+body>.content>#lists>section>article>.datecreation {
     margin: 0.125rem 0;
     font-size: 0.75rem;
-
 }
 
+
+/*                  FORMS                 */
+
+body form {
+    margin: 1rem;
+}
 
 
 /*                  LOGIN                 */
@@ -172,37 +202,64 @@ body > .content > #lists > section > article > .datecreation{
 body>.session {
     grid-column: span 2;
     display: grid;
-    grid-template-areas: "login" "signin" "signup";
 }
 
 body>.session>form {
-    padding: 0 1em 1em 1em;
+    padding: 0;
 }
 
-body>.session>#login {
-    padding: 0 1em 0 1em;
+body > .session > article {
+    margin: auto;
+}
+
+body > .session > article > h3 {
+    margin: 1rem;
+}
+
+body > .session > #login > form{
+    display: grid;
+    grid-template-areas: "username password" "login register";
+}
+
+body > .session > #login > form > .username{
+    grid-area: username;
+    margin: 0 0.15rem;
+}
+
+body > .session > #login > form > .password{
+    grid-area: password;
+    margin: 0 0.15rem;
+}
+
+body > .session > #login > form > .login{
     grid-area: login;
+    margin: 1rem 2.5rem 0.5rem;
 }
 
-body>.session>form>.username {
+body > .session > #login > form > .register{
+    grid-area: register;
+    margin: 1rem 2.5rem 0.5rem;
+}
+
+/*body>.session>form>.username {
     grid-area: signin;
 }
 
 body>.session>form>.signup {
     grid-area: signup;
-}
 
+
+}*/
 
 /*                  SIDEBAR                 */
-
-body>.sidebar {
+body>aside.sidebar {
     padding: 0;
     grid-area: sidebar;
     font-size: 0.85em;
 }
 
-body>#credits {
-    grid-area: content;
+/*                  CREDITS                 */
+body>.credits {
     grid-column: span 2;
     display: grid;
     grid-template-areas: "login" "signin" "signup";
