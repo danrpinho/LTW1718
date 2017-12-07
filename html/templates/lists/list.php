@@ -22,12 +22,14 @@
                 </tr>
             <?php } ?>
         </table>
+        <?php if($_SESSION['username'] == $list['username']) {?>
         <form id= "addlist" action="#" method="get">
-            <label>Description: <input type="text" name="description"></label>
-            <label>Assigneed: <input type="text" name="assigneed"></label>
-            <label>Date due: <input type="date" name="datedue"></label>
+            <input type="text" name="description" value="Description">
+            <input type="text" name="assigneed" value="Assigneed">
+            <input type="date" name="datedue" value"Date due">
             <input type="hidden" name="id" value="<?=$list['listID']?>">
             <input type="submit" value="Add">
         </form>
+      <?php }?>
     </article>
 </section>
