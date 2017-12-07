@@ -216,6 +216,30 @@ body > .session > article > h3 {
     margin: 1rem;
 }
 
+body > .session > #login > form{
+    display: grid;
+    grid-template-areas: "username password" "login register";
+}
+
+body > .session > #login > form > .username{
+    grid-area: username;
+    margin: 0 0.15rem;
+}
+
+body > .session > #login > form > .password{
+    grid-area: password;
+    margin: 0 0.15rem;
+}
+
+body > .session > #login > form > .login{
+    grid-area: login;
+    margin: 1rem 2.5rem 0.5rem;
+}
+
+body > .session > #login > form > .register{
+    grid-area: register;
+    margin: 1rem 2.5rem 0.5rem;
+}
 
 /*body>.session>form>.username {
     grid-area: signin;
