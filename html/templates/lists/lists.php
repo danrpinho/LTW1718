@@ -10,18 +10,10 @@
             <article>
                 <h4 class="title"><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['title']?></a></h4>
                 <p class="datecreation">Created on <?=date('F d, Y', strtotime($list['creation']));?></span>
-			    <p class="descr"><?=$list['descr']?></p>
+			          <p class="descr"><?=$list['descr']?></p>
+                <button class="remove">Remove</button>
             </article>
-            <?php } ?>
-        <?php } else { ?>
-            <article>
-                <header>
-                    <h3 id="title">Example</h3>
-                    <p class="datecreation">Creation Date: 2017-11-27</p>
-                </header>
-            </article>
-        <?php } ?>
+          <?php } } ?>
         </section>
     </article>
 </section>
-

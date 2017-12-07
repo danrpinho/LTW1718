@@ -9,6 +9,8 @@
   $assigneed = $_POST['assigneed'];
   $datedue = $_POST['datedue'];
   $newitemid = $itemid + 1;
+
+
   addItem($newitemid, $listid, $description, $solved, $assigneed, $datedue);
 
   $lists = getItemsAfterId($listid, $itemid);
