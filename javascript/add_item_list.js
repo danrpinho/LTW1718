@@ -28,19 +28,14 @@ function submitItem(event) {
 
 function receiveItems(data) {
   let table = document.querySelector('#tablelist');
-  let list = document.querySelector('#list');
   let items = JSON.parse(this.responseText);
   for (let i = 0; i < items.length; i++) {
     let item = document.createElement('tr');
-    let span = document.createElement('span');
-    span.innerHTML = items[i].id;
-    span.classList.add('itemid');
-    list.insertBefore(span, table);
-
     item.innerHTML = '<td><p>' + items[i].descr + '</p></td>' +
                      '<td><p>' + items[i].assignee + '</p></td>' +
                      '<td><p>' + items[i].datedue + '</p></td>' +
-                     '<td><input type="checkbox" name="solved" value=' + items[i].solved + '></td>';
+                     '<td><input type="checkbox" name="solved" value=' + items[i].solved + '></td>' +
+                     '<span class="itemid"><'+items[i].id+'></span>';
 
     table.append(item);
   }
