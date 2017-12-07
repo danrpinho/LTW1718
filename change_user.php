@@ -7,7 +7,7 @@
         $expiringLists = getExpiringItems();
         $expiredLists = getExpiredItems();
         include_once('html/templates/aside/sidebar.php');
-        include_once('html/templates/session/change_pw.php');
+        include_once('html/templates/session/change_user.php');
     } else {
         include_once('html/templates/session/login.php');
     }

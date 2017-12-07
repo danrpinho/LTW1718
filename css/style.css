@@ -67,11 +67,7 @@ body>footer>p>a {
 
 /*                  MAIN CONTENT            */
 
-body .content {
-    background-color: #69D2E7;
-}
-
-body .session {
+body > section {
     background-color: #69D2E7;
 }
 

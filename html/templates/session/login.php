@@ -1,6 +1,6 @@
 <section class="session">
     <article id="login">
-        <span class = "login"><h3>Login</h3></span>
+        <h3>Login</h3>
         <form action="action_login.php" method="post">
           <input type="text" placeholder="username" name="username" required>
           <input type="password" placeholder="password" name="password" required>
