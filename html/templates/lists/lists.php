@@ -11,7 +11,9 @@
                 <h4 class="title"><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['title']?></a></h4>
                 <p class="datecreation">Created on <?=date('F d, Y', strtotime($list['creation']));?></span>
 			          <p class="descr"><?=$list['descr']?></p>
-                <button class="remove">Remove</button>
+				<form action="action_remove_list.php?id=<?=$list['listID']?>" method="post">
+					<input type="submit" value="Remove">
+				</form>
             </article>
           <?php } } ?>
         </section>

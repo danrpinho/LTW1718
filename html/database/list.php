@@ -72,5 +72,12 @@
         $stmt->execute(array($itemid, $listID));
         return $stmt->fetchAll();
     }
+	
+	function removeList($listID){
+		global $dbh;
+		
+		$stmt = $dbh->prepare('DELETE FROM todolists WHERE listID = ?');
+		$stmt->execute(array($listID));
+	} 
 
 ?>
