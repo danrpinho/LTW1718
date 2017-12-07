@@ -196,7 +196,7 @@ body>.session>form>.signup {
 /*                  SIDEBAR                 */
 
 body>.sidebar {
-    padding: 0 1em 0 1em;
+    padding: 0;
     grid-area: sidebar;
     font-size: 0.85em;
 }
