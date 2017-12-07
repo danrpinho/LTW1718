@@ -73,4 +73,11 @@
         return $stmt->fetchAll();
     }
 
+    function checkItem($itemid, $listID, $solved, $username) {
+      global $dbh;
+      $stmt = $dbh->prepare('UPDATE listitems SET solved = ? WHERE id = ? AND listID = ? AND assignee = ?');
+      $stmt->execute(array($solved, $itemid, $listID, $username));
+
+    }
+
 ?>
