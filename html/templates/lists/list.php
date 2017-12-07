@@ -6,29 +6,32 @@
           <p class="datecreation">Created on <?=date('F d, Y', strtotime($list['creation']));?></p>
 		      <p class="descr"><?=$list['descr']?></p>
         </header>
-        <table id= "tablelist">
-            <thead>
-              <tr>
-                <th><p>Description</p></th><th><p>Assigneed</p></th><th><p>Date Due</p></th><th><p>Solved</p></th>
-              </tr>
-            </thead>
+        <section id="listitems">
+            <span class="tableheader">
+                <p class="descr">Description</p>
+                <p>Assigneed</p>
+                <p>Date Due</p>
+                <p>Solved</p>
+            </span>
             <?php foreach($items as $item) { ?>
-                <tr>
-                    <td><p><?=$item['descr']?></p></td>
-                    <td><p><?=$item['assignee']?></p></td>
-					          <td><p><?=$item['datedue']?></p></td>
-                    <td><input type="checkbox" name="solved" <?php if($item['solved']) { ?>checked<?php } ?> onchange="checkItemSolved(this, <?=$item['id']?>, <?=$item['listID']?>)"></td>
+                <span class="tableitem">
+                    <p class="descr"><?=$item['descr']?></p>
+                    <p><?=$item['assignee']?></p>
+					<p><?=$item['datedue']?></p>
+                    <input type="checkbox" name="solved" <?php if($item['solved']) { ?>checked<?php } ?> onchange="checkItemSolved(this, <?=$item['id']?>, <?=$item['listID']?>)"></td>
                     <span class="itemid"><?=$item['id']?></span>
-                </tr>
+                </span>
             <?php } ?>
-        </table>
+        </section>
         <?php if($_SESSION['username'] == $list['username']) {?>
         <form id= "addlist" action="#" method="get">
-            <input type="text" name="description"placeholder="description" required>
-            <input type="text" name="assigneed" placeholder="assigneed" required>
-            <input type="date" name="datedue" placeholder="datedue" required>
-            <input type="hidden" name="id" value="<?=$list['listID']?>">
-            <input type="submit" value="Add">
+            <span class="newitem">
+                <input type="text" name="description"placeholder="description" required>
+                <input type="text" name="assigneed" placeholder="assigneed" required>
+                <input type="date" name="datedue" placeholder="datedue" required>
+                <input type="hidden" name="id" value="<?=$list['listID']?>">
+                <input type="submit" value="Add">
+            </span>
         </form>
       <?php }?>
     </article>

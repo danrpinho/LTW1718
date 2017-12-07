@@ -138,14 +138,36 @@ body>.content>#list>.itemid {
     display: none;
 }
 
-body>.content>article>table {
+body > .content > #list > #listitems{
+    margin: 1rem;
+}
+
+body > .content > #list > #listitems  span{
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 0.8fr;
+    text-align: center;
+}
+
+body > .content > #list > #listitems > span > .itemid{
+    display: none;
+}
+
+body > .content > #list > #listitems > .tableheader > p{
+    font-weight: bold;
+}
+
+body > .content > #list > #listitems > span > .descr{
+    text-align: left;
+}
+
+/*body>.content>article>table {
     margin: 0 1rem 1rem 1rem;
     width: 100%
 }
 
 body>.content>#list>table p {
     margin: 0;
-}
+}*/
 
 
 /*              CONTENT-LISTS             */
