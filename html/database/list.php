@@ -87,4 +87,12 @@
 
     }
 
+
+    function getListsAssociated() {
+      global $dbh;
+
+        $stmt = $dbh->prepare('SELECT * FROM todolists WHERE listid = (SELECT listid FROM listitems WHERE assignee = ?) AND username != ?');
+        $stmt->execute(array($_SESSION['username'], $_SESSION['username']));
+        return $stmt->fetchAll();
+    }
 ?>
