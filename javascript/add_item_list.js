@@ -13,10 +13,10 @@ function encodeForAjax(data) {
 function submitItem(event) {
 
   let description = document.querySelector('input[name=description]').value;
-  let assigneed = document.querySelector('input[name=assigneed]').value;
+  let assigneed = document.querySelector('input[name=assignee]').value;
   let datedue = document.querySelector('input[name=datedue]').value;
   let listid = document.querySelector('input[name=id]').value;
-  let itemid = document.querySelector('#list #tablelist') != null ? document.querySelector('#list .itemid:last-of-type').textContent : -1;
+  let itemid = document.querySelector('#list #listitems .tableitem') != null ? document.querySelector('#list #listitems .tableitem:last-of-type span.itemid').textContent : -1;
   let request = new XMLHttpRequest();
   request.addEventListener('load', receiveItems);
   request.open('POST', 'api_add_item.php', true);
@@ -27,20 +27,42 @@ function submitItem(event) {
 }
 
 function receiveItems(data) {
-  let table = document.querySelector('#tablelist');
+  let section = document.querySelector('#listitems');
   let items = JSON.parse(this.responseText);
-  let list = document.querySelector('#list');
-  for (let i = 0; i < items.length; i++) {
-    let item = document.createElement('tr');
-    let span = document.createElement('span');
-    span.classList.add('itemid');
-    span.innerHTML = items[i].id;
-    item.innerHTML = '<td><p>' + items[i].descr + '</p></td>' +
-                     '<td><p>' + items[i].assignee + '</p></td>' +
-                     '<td><p>' + items[i].datedue + '</p></td>' +
-                     '<td><input type="checkbox" name="solved" value=' + items[i].solved + '></td>';
+  let date = new Date();
+  let sectionDue = document.querySelector('#due');
 
-    list.insertBefore(span, table);
-    table.append(item);
+  date.setDate(date.getDate() + 7);
+  let today = new Date();
+  for (let i = 0; i < items.length; i++) {
+    let item = document.createElement('span');
+    item.classList.add('tableitem');
+    item.innerHTML = '<p class="descr">' + items[i].descr + '</p>' +
+                     '<p class="assignee">' + items[i].assignee + '</p>' +
+                     '<p class="due">' + items[i].datedue + '</p>' +
+                     '<input type="checkbox" name="solved" onchange="checkItemSolved(this, '+ items[i].id +', ' + items[i].listID+ ')">' +
+                     '<span class="itemid">' + items[i].id + '</span>';
+
+    section.insertBefore(item, form);
+    let datedue = new Date(items[i].datedue);
+
+
+    if(datedue <= date) {
+      console.log("add");
+      let h3 = document.querySelector('#due .dueText');
+      if(h3) {
+        console.log("aqui");
+        h3.remove();
+        let newh3 = document.createElement('h3');
+        let t = document.createTextNode("These items are almost due!");
+        newh3.append(t);
+        sectionDue.append(newh3);
+      }
+
+      let due = document.createElement('ul');
+      due.innerHTML = '<li><p class="itemdescr"><a href="consolt_list.php?id=' + items[i].listID + '">' + items[i].descr + '</a></p>' +
+                      '<p class="datedue">' + items[i].datedue + '</p></li>';
+      sectionDue.append(due);
+    }
   }
 }

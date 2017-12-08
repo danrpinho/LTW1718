@@ -24,7 +24,9 @@
                     </li>
                 </ul>
             <?php } ?>
-        <?php } else echo("<h3>You don't have any items due in the next week!</h3>")?>
+        <?php } else { ?>
+            <h3 class="dueText">You don't have any items due in the next week!</h3>
+        <?php } ?>
     </section>
 
 </aside>

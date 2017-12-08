@@ -43,6 +43,12 @@
         display:flex;
         flex-direction: column;
     }
+
+    body>.content>#list>#listitems .newitem::before{
+        font-family: 'Barlow Semi Condensed', 'sans-serif';
+        font-weight: bold;
+        content:"Add a new item:";
+    }
 }
 
 

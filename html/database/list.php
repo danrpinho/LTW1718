@@ -12,8 +12,8 @@
     function getListById($listID) {
         global $dbh;
         if (isset($_SESSION['username'])) {
-            $stmt = $dbh->prepare('SELECT * FROM todolists WHERE listID = ? AND username = ?');
-            $stmt->execute(array($listID, $_SESSION['username']));
+            $stmt = $dbh->prepare('SELECT * FROM todolists WHERE listID = ?');
+            $stmt->execute(array($listID));
             return $stmt->fetch();
         }
     }
@@ -72,13 +72,13 @@
         $stmt->execute(array($itemid, $listID));
         return $stmt->fetchAll();
     }
-	
+
 	function removeList($listID){
 		global $dbh;
-		
+
 		$stmt = $dbh->prepare('DELETE FROM todolists WHERE listID = ?');
 		$stmt->execute(array($listID));
-	} 
+	}
 
     function checkItem($itemid, $listID, $solved, $username) {
       global $dbh;
@@ -87,4 +87,12 @@
 
     }
 
+
+    function getListsAssociated() {
+      global $dbh;
+
+        $stmt = $dbh->prepare('SELECT * FROM todolists WHERE listid = (SELECT listid FROM listitems WHERE assignee = ?) AND username != ?');
+        $stmt->execute(array($_SESSION['username'], $_SESSION['username']));
+        return $stmt->fetchAll();
+    }
 ?>

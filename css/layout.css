@@ -293,3 +293,12 @@ body>.credits {
     display: grid;
     grid-template-areas: "login" "signin" "signup";
 }
+
+body >.credits >#credits{
+    text-align:center;
+    margin:auto;
+}
+
+body > .credits > #credits > .authors{
+    font-family: "monospace";
+}
