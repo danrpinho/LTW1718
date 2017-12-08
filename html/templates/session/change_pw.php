@@ -1,3 +1,20 @@
+<?php 
+ include_once('utils.php');
+  if(isset($_GET['msg'])){
+	 //phpAlert('The passwords do not match');
+	 $msg=$_GET['msg'];
+	 if($msg === '2'){
+		 
+		 phpAlert('The new passwords do not match');
+	 }
+	 else if($msg === '3'){
+		 phpAlert('The new password must have at least 8 characters');
+	 }
+	 else if($msg === '1'){
+		 phpAlert('The old password you introduced is wrong');
+	 }
+  }
+?>
 <section class="content">
     <article id="change_password">
         <header>
@@ -14,7 +31,7 @@
             </label>
             <br>
             <label>Confirm new password<br>
-                <input type="password" name="confirm" value="">
+                <input type="password" name="confirmpassword" value="">
             </label>
             <br>
             <input type="submit" value="Submit">
