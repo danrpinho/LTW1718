@@ -1,9 +1,19 @@
 <?php
   function isLoginCorrect($username, $password) {
     global $dbh;
+	$stmt = $dbh->prepare('SELECT * FROM users WHERE username = ?');
+    $stmt->execute(array($username));
+	if( $stmt->fetch() === false){
+		return 1;
+	}
     $stmt = $dbh->prepare('SELECT * FROM users WHERE username = ? AND pword = ?');
     $stmt->execute(array($username, sha1($password)));
-    return $stmt->fetch() !== false;
+    if( $stmt->fetch() === false){
+		return 2;
+	}
+	else{
+		return 0;
+	}
   }
 
   function addUser($username, $fullname, $password, $confirmPassword, $email, $date) {
@@ -70,6 +80,7 @@
 		global $dbh;
 		$stmt = $dbh->prepare('UPDATE users SET pword = ? WHERE username = ?');
 		$stmt->execute(array(sha1($password), $_SESSION['username']));
+		return 0;
 	}
 
   }

@@ -13,14 +13,13 @@
 	 $email=$_GET['email'];
  }
   if(isset($_GET['msg'])){
-	 //phpAlert('The passwords do not match');
 	 $msg=$_GET['msg'];
 	 if($msg === '2'){
 		 
 		 phpAlert('The passwords do not match');
 	 }
 	 else if($msg === '3'){
-		 phpAlert('The passwords must have at least 8 characters');
+		 phpAlert('The password must have at least 8 characters');
 	 }
 	 else if($msg === '4'){
 		  phpAlert('The username must have at least 4 characters');
