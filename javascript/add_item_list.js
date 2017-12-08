@@ -45,13 +45,10 @@ function receiveItems(data) {
 
     section.insertBefore(item, form);
     let datedue = new Date(items[i].datedue);
-
-
-    if(datedue <= date) {
-      console.log("add");
+    let name = document.querySelector('header #user .username').textContent;
+    if(datedue <= date && items[i].assignee === name) {
       let h3 = document.querySelector('#due .dueText');
       if(h3) {
-        console.log("aqui");
         h3.remove();
         let newh3 = document.createElement('h3');
         let t = document.createTextNode("These items are almost due!");
