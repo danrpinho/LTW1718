@@ -17,7 +17,7 @@
                 <span class="tableitem">
                     <p class="descr"><?=$item['descr']?></p>
                     <p class="assignee"><?=$item['assignee']?></p>
-					<p class="due"><?=$item['datedue']?></p>
+					          <p class="due"><?=$item['datedue']?></p>
                     <input type="checkbox" name="solved" <?php if($item['solved']) { ?>checked<?php } ?> onchange="checkItemSolved(this, <?=$item['id']?>, <?=$item['listID']?>)"></td>
                     <span class="itemid"><?=$item['id']?></span>
                 </span>

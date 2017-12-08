@@ -4,7 +4,7 @@
             <h3 class="title">Change password</h3>
             <h3 class="back"><a href="user_settings.php">Back</a></h3>
         </header>
-        <form action="change_password.php" method="post">
+        <form action="action_change_password.php" method="post">
             <label>Current password<br>
                 <input type="password" name="currentpassword" value="">
             </label>

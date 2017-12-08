@@ -18,4 +18,32 @@
     $stmt->execute(array($username));
     return $stmt->fetch();
   }
+
+  function isPassCorrect($password) {
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE username = ? AND pword = ?');
+    $stmt->execute(array($_SESSION['username'], sha1($password)));
+    return $stmt->fetch() !== false;
+  }
+
+  function updateEmail($email) {
+    global $dbh;
+    $stmt = $dbh->prepare('UPDATE users SET email = ? WHERE username = ?');
+    $stmt->execute(array($email, $_SESSION['username']));
+
+  }
+
+  function updateName($email) {
+    global $dbh;
+    $stmt = $dbh->prepare('UPDATE users SET fullname = ? WHERE username = ?');
+    $stmt->execute(array($email, $_SESSION['username']));
+
+  }
+
+  function updatePass($password) {
+    global $dbh;
+    $stmt = $dbh->prepare('UPDATE users SET pword = ? WHERE username = ?');
+    $stmt->execute(array(sha1($password), $_SESSION['username']));
+
+  }
 ?>
