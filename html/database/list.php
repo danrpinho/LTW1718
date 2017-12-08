@@ -76,8 +76,12 @@
 	function removeList($listID){
 		global $dbh;
 
-		$stmt = $dbh->prepare('DELETE FROM todolists WHERE listID = ?');
-		$stmt->execute(array($listID));
+		$stmt1 = $dbh->prepare('DELETE FROM todolists WHERE listID = ?');
+    $stmt1->execute(array($listID));
+
+    $stmt2 = $dbh->prepare('DELETE FROM listitems WHERE listID = ?');
+    $stmt2->execute(array($listID));
+
 	}
 
     function checkItem($itemid, $listID, $solved, $username) {
