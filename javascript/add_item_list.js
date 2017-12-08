@@ -29,6 +29,11 @@ function submitItem(event) {
 function receiveItems(data) {
   let section = document.querySelector('#listitems');
   let items = JSON.parse(this.responseText);
+  let date = new Date();
+  let sectionDue = document.querySelector('#due');
+
+  date.setDate(date.getDate() + 7);
+  let today = new Date();
   for (let i = 0; i < items.length; i++) {
     let item = document.createElement('span');
     item.classList.add('tableitem');
@@ -39,5 +44,25 @@ function receiveItems(data) {
                      '<span class="itemid">' + items[i].id + '</span>';
 
     section.insertBefore(item, form);
+    let datedue = new Date(items[i].datedue);
+
+
+    if(datedue <= date) {
+      console.log("add");
+      let h3 = document.querySelector('#due .dueText');
+      if(h3) {
+        console.log("aqui");
+        h3.remove();
+        let newh3 = document.createElement('h3');
+        let t = document.createTextNode("These items are almost due!");
+        newh3.append(t);
+        sectionDue.append(newh3);
+      }
+
+      let due = document.createElement('ul');
+      due.innerHTML = '<li><p class="itemdescr"><a href="consolt_list.php?id=' + items[i].listID + '">' + items[i].descr + '</a></p>' +
+                      '<p class="datedue">' + items[i].datedue + '</p></li>';
+      sectionDue.append(due);
+    }
   }
 }
