@@ -1,8 +1,8 @@
 //let loginButton = document.querySelector('.loginform > .login');
-let registerButton = document.querySelector('.loginform > .register');
+let signUpButton = document.querySelector('.loginform > .register');
 
 //if(loginButton) loginButton.addEventListener("click", login);
-if(registerButton) registerButton.addEventListener("click", register);
+if(signUpButton) signUpButton.addEventListener("click", signUp);
 
 
 function login() {
@@ -18,11 +18,11 @@ function login() {
 
 }
 
-function register() {
-    console.log("register");
+function signUp() {
+    console.log("signUp");
     location.href = "register.php"
     /*let request = new XMLHttpRequest();
-    request.open('POST', 'register.php', true);
+    request.open('POST', 'signUp.php', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({ type: 0, username: '0', password: '0' }));*/
 }
