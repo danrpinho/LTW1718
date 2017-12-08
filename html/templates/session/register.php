@@ -19,6 +19,12 @@
 		 
 		 phpAlert('The passwords do not match');
 	 }
+	 else if($msg === '3'){
+		 phpAlert('The passwords must have at least 8 characters');
+	 }
+	 else if($msg === '4'){
+		  phpAlert('The username must have at least 4 characters');
+	 }
 	 else if($msg === '1'){
 		 phpAlert('Your username already exists');
 	 }

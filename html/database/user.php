@@ -10,6 +10,12 @@
 	  if($password !== $confirmPassword){
 		  return 2;
 	  }
+	  else if(strlen($password)<8){
+		  return 3;
+	  }
+	  else if(strlen($username) < 4){
+		  return 4;
+	  }
 	  else {
 		global $dbh;
 		$stmt = $dbh->prepare('SELECT * FROM users WHERE username = ?');
@@ -53,10 +59,18 @@
 
   }
 
-  function updatePass($password) {
-    global $dbh;
-    $stmt = $dbh->prepare('UPDATE users SET pword = ? WHERE username = ?');
-    $stmt->execute(array(sha1($password), $_SESSION['username']));
+  function updatePass($password, $confirmPassword) {
+	if($password !== $confirmPassword){
+	  return 2;
+	}
+	else if(strlen($password)<8){
+	  return 3;
+	}
+	else{
+		global $dbh;
+		$stmt = $dbh->prepare('UPDATE users SET pword = ? WHERE username = ?');
+		$stmt->execute(array(sha1($password), $_SESSION['username']));
+	}
 
   }
 ?>
