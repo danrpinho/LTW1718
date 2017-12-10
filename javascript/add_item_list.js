@@ -28,7 +28,9 @@ function submitItem(event) {
 
 function receiveItems(data) {
   let section = document.querySelector('#listitems');
-  let items = JSON.parse(this.responseText);
+  let arrayResponse = JSON.parse(this.responseText);
+  let items = arrayResponse[1];
+  let ret = arrayResponse[0];
   let date = new Date();
   let sectionDue = document.querySelector('#due');
 
@@ -61,5 +63,8 @@ function receiveItems(data) {
                       '<p class="datedue">' + items[i].datedue + '</p></li>';
       sectionDue.append(due);
     }
+  }
+  if(ret === 1){
+	  alert('The assignee you chose is not a valid user');
   }
 }

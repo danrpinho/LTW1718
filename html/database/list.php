@@ -59,9 +59,16 @@
 
     function addItem($id, $listID, $description, $solved, $assigneed, $datedue) {
         global $dbh;
-
-          $stmt = $dbh->prepare('INSERT INTO listitems (id, listID, descr, solved, assignee, datedue) VALUES(?, ?, ?, ?, ?, ?)');
-          $stmt->execute(array($id, $listID, $description, $solved, $assigneed, $datedue));
+		$stmt = $dbh->prepare('SELECT * FROM users WHERE username = ?');
+		$stmt->execute(array($assigneed));
+		if($stmt->fetch()){
+			$stmt = $dbh->prepare('INSERT INTO listitems (id, listID, descr, solved, assignee, datedue) VALUES(?, ?, ?, ?, ?, ?)');
+			$stmt->execute(array($id, $listID, $description, $solved, $assigneed, $datedue));
+			return 0;
+		}
+		else{
+			return 1;
+		}
     }
 
 
