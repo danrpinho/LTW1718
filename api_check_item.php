@@ -5,8 +5,7 @@
   $itemid = $_POST['itemid'];
   $listid = $_POST['listid'];
   $solved = $_POST['solved'];
-  $username = $_SESSION['username'];
-  checkitem($itemid, $listid, $solved, $username);
+  checkitem($itemid, $listid, $solved);
   echo json_encode(1);
 
 ?>

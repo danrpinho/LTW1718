@@ -84,10 +84,10 @@
 
 	}
 
-    function checkItem($itemid, $listID, $solved, $username) {
+    function checkItem($itemid, $listID, $solved) {
       global $dbh;
-      $stmt = $dbh->prepare('UPDATE listitems SET solved = ? WHERE id = ? AND listID = ? AND assignee = ?');
-      $stmt->execute(array($solved, $itemid, $listID, $username));
+      $stmt = $dbh->prepare('UPDATE listitems SET solved = ? WHERE id = ? AND listID = ?');
+      $stmt->execute(array($solved, $itemid, $listID));
 
     }
 

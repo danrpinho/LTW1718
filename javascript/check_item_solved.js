@@ -7,7 +7,7 @@ function checkItemSolved(element, itemid, listID) {
         solved = 0;
       }
     let request = new XMLHttpRequest();
-
+	
     request.open('POST', 'api_check_item.php', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(encodeForAjax({itemid: itemid, listid: listID, solved: solved}));
