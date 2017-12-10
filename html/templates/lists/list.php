@@ -18,7 +18,10 @@
                     <p class="descr"><?=$item['descr']?></p>
                     <p class="assignee"><?=$item['assignee']?></p>
 					          <p class="due"><?=$item['datedue']?></p>
-                    <input type="checkbox" name="solved" <?php if($item['solved']) { ?>checked<?php } ?> onchange="checkItemSolved(this, <?=$item['id']?>, <?=$item['listID']?>)"></td>
+                    <input type="checkbox" name="solved" <?php if($item['solved']) { ?>checked<?php } ?> 
+						<?php if($_SESSION['username'] === $item['assignee'] || $_SESSION['username'] === $list['username']) {?> 
+							onchange="checkItemSolved(this, <?=$item['id']?>, <?=$item['listID']?>)" <?php }  else { ?>
+							onclick="return false;" <?php } ?> > </td>
                     <span class="itemid"><?=$item['id']?></span>
                 </span>
             <?php } ?>

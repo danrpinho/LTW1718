@@ -84,10 +84,24 @@
 
 	}
 
-    function checkItem($itemid, $listID, $solved) {
+    function checkItem($itemid, $listID, $solved, $username) {
       global $dbh;
-      $stmt = $dbh->prepare('UPDATE listitems SET solved = ? WHERE id = ? AND listID = ?');
-      $stmt->execute(array($solved, $itemid, $listID));
+	  /*$stmt = $dbh->prepare('SELECT * FROM todolists WHERE listID = ?');
+	  $stmt = $dbh->execute(array($listID));
+	  $listOwner = $stmt->fetchAll()['username'];
+	  
+	  $stmt = $dbh->prepare('SELECT * FROM listitems WHERE id = ? AND listID = ?');
+	  $stmt = $dbh->execute(array($itemid, $listID));
+	  $assignee = $stmt->fetchAll()['assignee'];
+	  
+	  if(($username === $assignee) || ($username === listOwner)){ */
+		$stmt = $dbh->prepare('UPDATE listitems SET solved = ? WHERE id = ? AND listID = ?');
+		$stmt->execute(array($solved, $itemid, $listID));
+		/*return 0;
+	  }
+	  else{
+		  return 1;
+	  }*/
 
     }
 
