@@ -1,4 +1,4 @@
-<?php 
+<?php
  include_once('utils.php');
  $username="";
  $fullname="";
@@ -15,7 +15,7 @@
   if(isset($_GET['msg'])){
 	 $msg=$_GET['msg'];
 	 if($msg === '2'){
-		 
+
 		 phpAlert('The passwords do not match');
 	 }
 	 else if($msg === '3'){
@@ -34,15 +34,12 @@
     <h3>Register a new account</h3>
 	<p class="requiredfields">All fields are required.</p>
     <form class="registerform" action="new_user.php" method="post">
-      <label>Username:
+      <label>Username<br>
         <input type="text" name="username" placeholder="username" value="<?=$username?>" required>
       </label>
       <br>
-      <label>Name:
+      <label>Name<br>
         <input type="text" name="fullname" placeholder="John Doe" value="<?=$fullname?>">
-
-    
-
       </label>
       <br>
       <label>Password<br>
@@ -54,12 +51,11 @@
       </label>
       <br>
 
-      <label>Email:
+      <label>Email<br>
         <input type="email" name="email" placeholder="email@example.com" value="<?=$email?>" required>
-
       </label>
       <br>
-      <input class="register" type="submit" value="Register">
+      <input class="submit" type="submit" value="Register">
     </form>
   </article>
 </section>

@@ -224,6 +224,11 @@ body>.content>#lists>section>article>form {
     margin: auto 0 auto auto;
 }
 
+/*              CREATE-LIST               */
+body >.content >#create_list>h3{
+    margin-left:1rem;
+}
+
 
 /*                  FORMS                 */
 
@@ -231,6 +236,9 @@ body form {
     margin: 1rem;
 }
 
+body form .submit{
+    margin-top: 1rem
+}
 
 /*                  LOGIN                 */
 

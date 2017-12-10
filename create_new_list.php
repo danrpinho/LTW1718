@@ -10,7 +10,7 @@
         include_once('html/templates/aside/sidebar.php');
         include_once('html/templates/lists/create_new_list.php');
     } else {
-        include_once('html/templates/session/login.php');
+        header('Location: index.php');
     }
 
     include_once('html/templates/common/footer.php');

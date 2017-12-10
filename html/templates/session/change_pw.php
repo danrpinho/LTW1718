@@ -1,10 +1,10 @@
-<?php 
+<?php
  include_once('utils.php');
   if(isset($_GET['msg'])){
 	 //phpAlert('The passwords do not match');
 	 $msg=$_GET['msg'];
 	 if($msg === '2'){
-		 
+
 		 phpAlert('The new passwords do not match');
 	 }
 	 else if($msg === '3'){
@@ -34,7 +34,7 @@
                 <input type="password" name="confirmpassword" value="">
             </label>
             <br>
-            <input type="submit" value="Submit">
+            <input class="submit" type="submit" value="Submit">
         </form>
     </article>
 </section>

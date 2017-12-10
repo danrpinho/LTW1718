@@ -13,7 +13,7 @@
                 <input type="password" name="password" value="">
             </label>
             <br>
-            <input type="submit" value="Submit">
+            <input class="submit" type="submit" value="Submit">
         </form>
     </article>
 </section>

@@ -2,15 +2,15 @@
 	<article id="create_list">
 		<h3>Create a new list</h3>
 		<form action="new_list.php" method="post">
-		    <label>Title:
+		    <label>Title<br>
 			  <input type="text" name="title" value="">
 			</label>
 			<br>
-		    <label>Description:
+		    <label>Description<br>
 			  <input type="textarea" name="description" value="">
 			</label>
 			<br>
-			<input type="submit" value="Create">
+			<input class="submit" type="submit" value="Create">
 		</form>
 	</article>
 </section>
