@@ -24,6 +24,9 @@
 	 else if($msg === '4'){
 		  phpAlert('The username must have at least 4 characters');
 	 }
+	 else if($msg === '5'){
+		 phpAlert('Password must have at least one character from 3 of the following 4 categories: \n- Uppercase letters\n- Lowercase letteres\n- Base 10 digits\n- Nonalphanumeric characters\n');
+	 }
 	 else if($msg === '1'){
 		 phpAlert('Your username already exists');
 	 }

@@ -26,6 +26,9 @@
 	  else if(strlen($username) < 4){
 		  return 4;
 	  }
+	  else if(validPass($password) === 0){
+		  return 5;
+	  }
 	  else {
 		global $dbh;
 		$stmt = $dbh->prepare('SELECT * FROM users WHERE username = ?');
@@ -84,4 +87,33 @@
 	}
 
   }
+  
+  function validPass($password){
+	  $upperCase=0;
+	  $lowerCase=0;
+	  $numeral = 0;
+	  $other = 0;
+	  for($i=0;$i<strlen($password);$i++){
+		  if(ord($password[$i]) >= 48 && ord($password[$i]) <= 57){
+			  $numeral = 1;
+		  }
+		  else if(ord($password[$i]) >= 65 && ord($password[$i]) <= 90){
+			  $upperCase = 1;
+		  }
+		  else if(ord($password[$i]) >= 97 && ord($password[$i]) <= 122){
+			  $lowerCase = 1;
+		  }
+		  else{
+			  $other=1;
+		  }
+		  
+	  }
+	  
+	  if(($upperCase + $lowerCase + $numeral + $other)>= 3){
+		  return 1;
+	  }
+	  else{
+		 return 0;
+  }
+ }
 ?>

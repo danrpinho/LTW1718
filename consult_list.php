@@ -5,12 +5,17 @@
 
     if (isset($_SESSION['username']) && $_SESSION['username'] != '') {
         include_once('html/database/list.php');
-        $list = getListById($_GET['id']);
-        $items = getListItems($_GET['id']);
-        $expiringLists = getExpiringItems();
-        $expiredLists = getExpiredItems();
-        include_once('html/templates/aside/sidebar.php');
-        include_once('html/templates/lists/list.php');
+		if(validListID($_GET['id'], $_SESSION['username'])){ 
+			$list = getListById($_GET['id']);
+			$items = getListItems($_GET['id']);
+			$expiringLists = getExpiringItems();
+			$expiredLists = getExpiredItems();
+			include_once('html/templates/aside/sidebar.php');
+			include_once('html/templates/lists/list.php');
+		}
+		else{
+			header('Location: index.php?msg=3');
+		}
     } else {
         header('Location: index.php');
     }

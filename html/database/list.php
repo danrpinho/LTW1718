@@ -144,4 +144,17 @@
             return $stmt->fetchAll();
         }
     }
+	
+	function validListID($listID, $username){
+		global $dbh;
+		$stmt = $dbh->prepare('SELECT * FROM todolists WHERE listID = ? AND (username = ? OR EXISTS (SELECT * FROM listitems WHERE listID = ? AND assignee = ?))');
+		$stmt->execute(array($listID, $username, $listID, $username));
+		
+		if($stmt->fetch()){
+			return 1;
+		}
+		else{
+			return 0;
+		}
+	}
 ?>
