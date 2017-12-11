@@ -12,6 +12,9 @@
 	else if($ret === 4){
 		header('Location: register.php?msg=4&username='.$_POST['username'].'&fullname='.$_POST['fullname'].'&email='.$_POST['email']);
 	}
+	else if($ret === 5){
+		header('Location: register.php?msg=5&username='.$_POST['username'].'&fullname='.$_POST['fullname'].'&email='.$_POST['email']);
+	}
 	else if($ret === 1){
 		header('Location: register.php?msg=1&username='.$_POST['username'].'&fullname='.$_POST['fullname'].'&email='.$_POST['email']);
 	}

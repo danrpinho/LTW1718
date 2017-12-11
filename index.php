@@ -5,6 +5,10 @@
 	include_once('utils.php');
 
     if (isset($_SESSION['username']) && $_SESSION['username'] != '') {
+		if(isset($_GET['msg'])){
+			if($_GET['msg'] === '3')
+				phpAlert('You do not have access to that list');
+		}
         include_once('html/database/list.php');
         $lists = getAllLists();
         $expiringItems = getExpiringItems();
@@ -23,6 +27,7 @@
 				phpAlert('That username does not exist');
 			else if($_GET['msg'] === '2')
 				phpAlert('The password is incorrect');
+			
 		}
 
         include_once('html/templates/session/login.php');
