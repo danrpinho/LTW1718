@@ -21,7 +21,7 @@ function submitItem(event) {
   let assigneed = document.querySelector('input[name=assignee]').value;
   let datedue = document.querySelector('input[name=datedue]').value;
   let listid = document.querySelector('input[name=id]').value;
-  let itemid = document.querySelector('#list #listitems .tableitem') != null ? document.querySelector('#list #listitems .tableitem:last-of-type span.itemid').textContent : -1;
+  let itemid = document.querySelector('#list #listitems .tableitem') != null ? document.querySelector('#list #listitems .tableitem:last-of-type span.itemid').textContent : 0;
   let request = new XMLHttpRequest();
   request.addEventListener('load', receiveItems);
   request.open('POST', 'api_add_item.php', true);
@@ -62,11 +62,13 @@ function receiveCat(data) {
       if(name != categories[i].username) {
         category.innerHTML = '<span class = "info"><h4 class="title"><a href="consult_list.php?id=' + categories[i].listID + '">' + categories[i].title + '</a></h4>' +
                              '<p class="datecreation">Created on ' + monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear() + ' by ' + categories[i].username + '</p>' +
-                             '<p class="descr">' + categories[i].descr + '</p></span></article>';
+                             '<p class="descr">' + categories[i].descrList +
+                             '<p class="category">' + categories[i].category + '</p></span></article>';
       } else {
         category.innerHTML = '<article><span class = "info"><h4 class="title"><a href="consult_list.php?id=' + categories[i].listID + '">' + categories[i].title + '</a></h4>' +
                              '<p class="datecreation">Created on ' + monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear() + ' by ' + categories[i].username + '</p>' +
-                             '<p class="descr">' + categories[i].descr + '</p></span></article>' +
+                             '<p class="descr">' + categories[i].descrList + '</p>' +
+                             '<p class="category">' + categories[i].category + '</p></span></article>' +
                              '<form action="action_remove_list.php?id=' + categories[i].listID + '" method="post">' +
                      				 '<input type="submit" value="Remove"></form>';
       }
@@ -89,7 +91,7 @@ function receiveItems(data) {
   for (let i = 0; i < items.length; i++) {
     let item = document.createElement('span');
     item.classList.add('tableitem');
-    item.innerHTML = '<p class="descr">' + items[i].descr + '</p>' +
+    item.innerHTML = '<p class="descr">' + items[i].descrItem + '</p>' +
                      '<p class="assignee">' + items[i].assignee + '</p>' +
                      '<p class="due">' + items[i].datedue + '</p>' +
                      '<input type="checkbox" name="solved" onchange="checkItemSolved(this, '+ items[i].id +', ' + items[i].listID+ ')">' +
@@ -109,7 +111,7 @@ function receiveItems(data) {
       }
 
       let due = document.createElement('ul');
-      due.innerHTML = '<li><p class="itemdescr"><a href="consolt_list.php?id=' + items[i].listID + '">' + items[i].descr + '</a></p>' +
+      due.innerHTML = '<li><p class="itemdescr"><a href="consolt_list.php?id=' + items[i].listID + '">' + items[i].descrItem + '</a></p>' +
                       '<p class="datedue">' + items[i].datedue + '</p></li>';
       sectionDue.append(due);
     }

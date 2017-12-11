@@ -4,8 +4,8 @@
     include_once('html/templates/common/header.php');
     if (isset($_SESSION['username']) && $_SESSION['username'] != '') {
         include_once('html/database/list.php');
-        $expiringLists = getExpiringItems();
-        $expiredLists = getExpiredItems();
+        $expiringItems = getExpiringItems();
+        $expiredItems = getExpiredItems();
         include_once('html/templates/aside/sidebar.php');
         include_once('html/templates/session/change_pw.php');
     } else {

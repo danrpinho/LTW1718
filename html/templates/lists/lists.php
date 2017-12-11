@@ -19,7 +19,7 @@
                 <span class="info">
                     <h4 class="title"><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['title']?></a></h4>
                     <p class="datecreation">Created on <?=date('F d, Y', strtotime($list['creation']));?> by <?=$list['username']?></p>
-                    <p class="descr"><?=$list['descr']?></p>
+                    <p class="descr"><?=$list['descrList']?></p>
                     <p class="category"><?=$list['category']?></p>
                 </span>
         				<form action="action_remove_list.php?id=<?=$list['listID']?>" method="post">
@@ -32,7 +32,7 @@
               <span class="info">
                   <h4 class="title"><a href="consult_list.php?id=<?=$list['listID']?>"><?=$list['title']?></a></h4>
                   <p class="datecreation">Created on <?=date('F d, Y', strtotime($list['creation']));?> by <?=$list['username']?></span>
-                  <p class="descr"><?=$list['descr']?></p>
+                  <p class="descr"><?=$list['descrList']?></p>
                   <p class="category"><?=$list['category']?></p>
               </span>
           </article>

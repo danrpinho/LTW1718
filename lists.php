@@ -4,8 +4,8 @@
   include_once('html/database/list.php');
 
   $lists = getAllLists();
-  $expiringLists = getExpiringItems();
-  $expiredLists = getExpiredItems();
+  $expiringItems = getExpiringItems();
+  $expiredItems = getExpiredItems();
 
   include_once('html/templates/common/header.php');
   include_once('html/templates/aside/sidebar.php');

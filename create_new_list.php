@@ -5,8 +5,8 @@
 
     if (isset($_SESSION['username']) && $_SESSION['username'] != '') {
         include_once('html/database/list.php');
-        $expiringLists = getExpiringItems();
-        $expiredLists = getExpiredItems();
+        $expiringItems = getExpiringItems();
+        $expiredItems = getExpiredItems();
         include_once('html/templates/aside/sidebar.php');
         include_once('html/templates/lists/create_new_list.php');
     } else {

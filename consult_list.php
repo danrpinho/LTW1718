@@ -8,8 +8,8 @@
 		if(validListID($_GET['id'], $_SESSION['username'])){ 
 			$list = getListById($_GET['id']);
 			$items = getListItems($_GET['id']);
-			$expiringLists = getExpiringItems();
-			$expiredLists = getExpiredItems();
+			$expiringItems = getExpiringItems();
+			$expiredItems = getExpiredItems();
 			include_once('html/templates/aside/sidebar.php');
 			include_once('html/templates/lists/list.php');
 		}

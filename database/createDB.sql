@@ -15,7 +15,7 @@ CREATE TABLE todolists(
     listID INTEGER PRIMARY KEY,
     username TEXT REFERENCES users,
     title TEXT,
-	  descr TEXT,
+	  descrList TEXT,
     creation DATE,
     category TEXT
 );
@@ -23,7 +23,7 @@ CREATE TABLE todolists(
 CREATE TABLE listitems(
     id INTEGER,
     listID INTEGER REFERENCES todolists,
-    descr TEXT,
+    descrItem TEXT,
     solved INTEGER,
     assignee TEXT REFERENCES users,
 	  datedue DATE,

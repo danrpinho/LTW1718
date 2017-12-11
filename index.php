@@ -11,8 +11,8 @@
 		}
         include_once('html/database/list.php');
         $lists = getAllLists();
-        $expiringLists = getExpiringItems();
-        $expiredLists = getExpiredItems();
+        $expiringItems = getExpiringItems();
+        $expiredItems = getExpiredItems();
         $listsAssociated = getListsAssociated();
         $categories = getAllCategories();
         include_once('html/templates/aside/sidebar.php');
