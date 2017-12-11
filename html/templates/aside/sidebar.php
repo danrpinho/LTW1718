@@ -1,6 +1,6 @@
 <aside class="sidebar">
   <form class="search" action="#" method="get">
-    <label>Country:
+    <label>Lists:
       <input id="listsearch" name="listsearch" type="text">
     </label>
   </form>
