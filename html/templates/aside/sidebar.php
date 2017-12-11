@@ -1,12 +1,12 @@
 <aside class="sidebar">
-    <?php if(count($expiredLists) > 0){ ?>
+    <?php if(count($expiredItems) > 0){ ?>
         <section id="overdue">
             <h3>These items are overdue!</h3>
-            <?php foreach($expiredLists as $expiredList) { ?>
+            <?php foreach($expiredItems as $expiredItem) { ?>
                 <ul>
                     <li>
-                        <p class="itemdescr"><a href="consult_list.php?id=<?=$expiredList['listID']?>"><?=$expiredList['descr']?></a></p>
-                        <p class="datedue"><?=$expiredList['datedue']?></p>
+                        <p class="itemdescr"><a href="consult_list.php?id=<?=$expiredItem['listID']?>"><?=$expiredItem['descrItem']?></a></p>
+                        <p class="datedue"><?=$expiredItem['datedue']?></p>
                     </li>
                 </ul>
             <?php } ?>
@@ -14,13 +14,13 @@
         </section>
     <?php }?>
     <section id="due">
-        <?php if(count($expiringLists) > 0){?>
+        <?php if(count($expiringItems) > 0){?>
             <h3>These items are almost due!</h3>
-            <?php foreach($expiringLists as $expiringlist) { ?>
+            <?php foreach($expiringItems as $expiringItem) { ?>
                 <ul>
                     <li>
-                        <p class="itemdescr"><a href="consult_list.php?id=<?=$expiringlist['listID']?>"><?=$expiringlist['descr']?></a></p>
-                        <p class="datedue"><?=$expiringlist['datedue']?></p>
+                        <p class="itemdescr"><a href="consult_list.php?id=<?=$expiringItem['listID']?>"><?=$expiringItem['descrItem']?></a></p>
+                        <p class="datedue"><?=$expiringItem['datedue']?></p>
                     </li>
                 </ul>
             <?php } ?>

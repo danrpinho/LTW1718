@@ -51,7 +51,7 @@
     function addList($title, $description, $date, $category) {
         global $dbh;
         if (isset($_SESSION['username'])) {
-            $stmt = $dbh->prepare('INSERT INTO todolists (listID, username, title, descr, creation, category) VALUES(?, ?, ?, ?, ?, ?)');
+            $stmt = $dbh->prepare('INSERT INTO todolists (listID, username, title, descrList, creation, category) VALUES(?, ?, ?, ?, ?, ?)');
             $stmt->execute(array(NULL, $_SESSION['username'],$title, $description, $date, $category));
         }
     }
@@ -63,7 +63,7 @@
       		$stmt = $dbh->prepare('SELECT * FROM users WHERE username = ?');
       		$stmt->execute(array($assigneed));
       		if($stmt->fetch()){
-      			$stmt = $dbh->prepare('INSERT INTO listitems (id, listID, descr, solved, assignee, datedue) VALUES(?, ?, ?, ?, ?, ?)');
+      			$stmt = $dbh->prepare('INSERT INTO listitems (id, listID, descrItem, solved, assignee, datedue) VALUES(?, ?, ?, ?, ?, ?)');
       			$stmt->execute(array($id, $listID, $description, $solved, $assigneed, $datedue));
       			return 0;
       		}
@@ -121,7 +121,7 @@
     function getListsAssociated() {
       global $dbh;
       if (isset($_SESSION['username'])) {
-        $stmt = $dbh->prepare('SELECT * FROM todolists WHERE listID = (SELECT listID FROM listitems WHERE assignee = ?) AND username != ?');
+        $stmt = $dbh->prepare('SELECT * FROM todolists JOIN listitems USING (listID) WHERE assignee = ? AND username != ?');
         $stmt->execute(array($_SESSION['username'], $_SESSION['username']));
         return $stmt->fetchAll();
       }
