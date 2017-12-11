@@ -148,7 +148,7 @@ body>.content>#list>#listitems p{
 
 body>.content>#list>#listitems span {
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr 0.25fr;
+    grid-template-columns: 5fr 1fr 1fr 0.6fr;
     text-align: center;
 }
 
@@ -172,10 +172,19 @@ body>.content>#list>#listitems>form input{
     margin:0.25rem;
 }
 
+body>.content>#list>#listitems>form>.newitem>#description{
+    margin-left:0;
+}
+
+
 #assignee{
     min-width: 20px;
 }
 
+body>.content>#list>#listitems>.tableitem input{
+	margin-left: 2.2em;
+	margin-top: 0.7em;
+}
 
 /*              CONTENT-LISTS             */
 
