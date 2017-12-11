@@ -6,8 +6,8 @@
         include_once('html/database/list.php');
         include_once('html/database/user.php');
         $user = getUser($_SESSION['username']);
-        $expiringLists = getExpiringItems();
-        $expiredLists = getExpiredItems();
+        $expiringItems = getExpiringItems();
+        $expiredItems = getExpiredItems();
         include_once('html/templates/aside/sidebar.php');
         include_once('html/templates/session/show_user.php');
     } else {
