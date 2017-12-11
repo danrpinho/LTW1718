@@ -139,7 +139,7 @@
     function getAllCategories() {
         global $dbh;
         if (isset($_SESSION['username'])) {
-            $stmt = $dbh->prepare('SELECT category FROM todolists WHERE username = ?');
+            $stmt = $dbh->prepare('SELECT DISTINCT category FROM todolists WHERE username = ?');
             $stmt->execute(array($_SESSION['username']));
             return $stmt->fetchAll();
         }
