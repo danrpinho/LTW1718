@@ -119,4 +119,7 @@ function receiveItems(data) {
   if(ret === 1){
 	  alert('The assignee you chose is not a valid user');
   }
+  else if(ret === 2){
+	  alert('The description you chose has already been used to describe a different item');
+  }
 }

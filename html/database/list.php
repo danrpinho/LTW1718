@@ -63,9 +63,17 @@
       		$stmt = $dbh->prepare('SELECT * FROM users WHERE username = ?');
       		$stmt->execute(array($assigneed));
       		if($stmt->fetch()){
-      			$stmt = $dbh->prepare('INSERT INTO listitems (id, listID, descrItem, solved, assignee, datedue) VALUES(?, ?, ?, ?, ?, ?)');
-      			$stmt->execute(array($id, $listID, $description, $solved, $assigneed, $datedue));
-      			return 0;
+				$stmt = $dbh->prepare('SELECT * FROM listitems WHERE descrItem = ? AND listID = ?');
+				$stmt->execute(array($description, $listID));
+				if($stmt->fetch()){
+					return 2;
+				}
+				else{
+					$stmt = $dbh->prepare('INSERT INTO listitems (id, listID, descrItem, solved, assignee, datedue) VALUES(?, ?, ?, ?, ?, ?)');
+					$stmt->execute(array($id, $listID, $description, $solved, $assigneed, $datedue));
+					return 0;
+				}
+
       		}
       		else{
       			return 1;
