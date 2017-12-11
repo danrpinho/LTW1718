@@ -147,14 +147,25 @@
 
 	function validListID($listID, $username){
 		global $dbh;
-		$stmt = $dbh->prepare('SELECT * FROM todolists WHERE listID = ? AND (username = ? OR EXISTS (SELECT * FROM listitems WHERE listID = ? AND assignee = ?))');
-		$stmt->execute(array($listID, $username, $listID, $username));
+    if (isset($_SESSION['username'])) {
+  		$stmt = $dbh->prepare('SELECT * FROM todolists WHERE listID = ? AND (username = ? OR EXISTS (SELECT * FROM listitems WHERE listID = ? AND assignee = ?))');
+  		$stmt->execute(array($listID, $username, $listID, $username));
 
-		if($stmt->fetch()){
-			return 1;
-		}
-		else{
-			return 0;
-		}
+  		if($stmt->fetch()){
+  			return 1;
+  		}
+  		else{
+  			return 0;
+  		}
+    }
 	}
+
+  function getSearch($name) {
+    global $dbh;
+    if (isset($_SESSION['username'])) {
+      $stmt = $dbh->prepare("SELECT * FROM todolists WHERE username = ? AND upper(title) LIKE upper(?) LIMIT 10");
+      $stmt->execute(array($_SESSION['username'], "$name%"));
+      return $stmt->fetchAll();
+    }
+  }
 ?>

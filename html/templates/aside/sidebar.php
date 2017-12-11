@@ -1,4 +1,11 @@
 <aside class="sidebar">
+  <form class="search" action="#" method="get">
+    <label>Country:
+      <input id="listsearch" name="listsearch" type="text">
+    </label>
+  </form>
+  <ul id="suggestions">
+  </ul>
     <?php if(count($expiredItems) > 0){ ?>
         <section id="overdue">
             <h3>These items are overdue!</h3>

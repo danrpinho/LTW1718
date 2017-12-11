@@ -4,13 +4,12 @@
 		    <h3 id= "name">Your To-Do Lists</h3>
 		    <h3 id= "create"><a href="create_new_list.php">Create New List</a></h3>
         <select id="category">
-
           <option value="All">All</option>
           <option value="Items">Items</option>
           <?php foreach($categories as $categoryarray) { foreach($categoryarray as $category) { echo $category ?>
           <option value="<?=$category?>"><?=$category?></option>
         <?php } } ?>
-        </select>
+      </select>
 	    </header>
         <section id="listLists">
         <?php if (isset($_SESSION['username']) && $_SESSION['username'] != '') { ?>

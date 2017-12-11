@@ -11,6 +11,7 @@
         <script src="javascript/add_item_change_category.js" defer></script>
         <script src="javascript/check_item_solved.js" defer></script>
         <script src="javascript/login.js" defer></script>
+        <script src="javascript/search_bar.js" defer></script>
 
     </head>
     <body>
