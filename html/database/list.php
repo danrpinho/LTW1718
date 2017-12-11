@@ -32,8 +32,8 @@
         if (isset($_SESSION['username'])) {
             $due = date("Y-m-d", strtotime("+7 day"));
             $today = date("Y-m-d");
-            $stmt = $dbh->prepare('SELECT * FROM listitems WHERE assignee = ? AND date(datedue) < ? AND date(datedue) > ?');
-            $stmt->execute(array($_SESSION['username'],$due,$today));
+            $stmt = $dbh->prepare('SELECT * FROM listitems WHERE assignee = ? AND date(datedue) < ? AND date(datedue) > ? AND solved = ?');
+            $stmt->execute(array($_SESSION['username'],$due,$today, 0));
             return $stmt->fetchAll();
         }
     }
@@ -42,8 +42,8 @@
         global $dbh;
         if (isset($_SESSION['username'])) {
             $date = date("Y-m-d");
-            $stmt = $dbh->prepare('SELECT * FROM listitems WHERE assignee = ? AND date(datedue) < ?');
-            $stmt->execute(array($_SESSION['username'],$date));
+            $stmt = $dbh->prepare('SELECT * FROM listitems WHERE assignee = ? AND date(datedue) < ? AND solved = ?');
+            $stmt->execute(array($_SESSION['username'],$date, 0));
             return $stmt->fetchAll();
         }
     }
@@ -144,12 +144,12 @@
             return $stmt->fetchAll();
         }
     }
-	
+
 	function validListID($listID, $username){
 		global $dbh;
 		$stmt = $dbh->prepare('SELECT * FROM todolists WHERE listID = ? AND (username = ? OR EXISTS (SELECT * FROM listitems WHERE listID = ? AND assignee = ?))');
 		$stmt->execute(array($listID, $username, $listID, $username));
-		
+
 		if($stmt->fetch()){
 			return 1;
 		}
