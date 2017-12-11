@@ -1,6 +1,7 @@
 <?php
   include_once('html/database/connection.php');
   include_once('html/database/list.php');
+  include_once('html/includes/init.php');
 
   $itemid = $_POST['itemid'];
   $listid = $_POST['listid'];

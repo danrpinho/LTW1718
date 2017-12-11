@@ -15,8 +15,9 @@ CREATE TABLE todolists(
     listID INTEGER PRIMARY KEY,
     username TEXT REFERENCES users,
     title TEXT,
-	descr TEXT,
-    creation DATE
+	  descr TEXT,
+    creation DATE,
+    category TEXT
 );
 
 CREATE TABLE listitems(
@@ -27,10 +28,4 @@ CREATE TABLE listitems(
     assignee TEXT REFERENCES users,
 	  datedue DATE,
     PRIMARY KEY(id, listID)
-);
-
-CREATE TABLE categories(
-    category TEXT,
-    listID integer,
-    PRIMARY KEY(category, listID)
 );

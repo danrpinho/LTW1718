@@ -10,20 +10,21 @@
         $expiringLists = getExpiringItems();
         $expiredLists = getExpiredItems();
         $listsAssociated = getListsAssociated();
+        $categories = getAllCategories();
         include_once('html/templates/aside/sidebar.php');
         include_once('html/templates/lists/lists.php');
     } else {
 		$username="";
 		if(isset($_GET['username']))
 			$username=$_GET['username'];
-		
+
 		if(isset($_GET['msg'])){
 			if($_GET['msg'] === '1')
 				phpAlert('That username does not exist');
 			else if($_GET['msg'] === '2')
 				phpAlert('The password is incorrect');
 		}
-			
+
         include_once('html/templates/session/login.php');
     }
 

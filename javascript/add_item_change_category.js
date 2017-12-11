@@ -1,7 +1,12 @@
 let form = document.getElementById('addlist');
 let table = document.getElementById('tablelist');
+let select = document.getElementById('category');
 if(form) {
   form.addEventListener('submit', submitItem);
+}
+
+if(select) {
+  select.addEventListener('change', changeCat);
 }
 
 function encodeForAjax(data) {
@@ -24,6 +29,51 @@ function submitItem(event) {
   request.send(encodeForAjax({itemid: itemid, listid: listid, description: description, assigneed: assigneed, datedue: datedue}));
   event.preventDefault();
 
+}
+
+function changeCat(event) {
+  let category =  select.options[select.selectedIndex].value;
+  let request = new XMLHttpRequest();
+  request.addEventListener('load', receiveCat);
+  request.open('POST', 'api_change_category.php', true);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  request.send(encodeForAjax({category: category}));
+  event.preventDefault();
+
+}
+
+function receiveCat(data) {
+  let categories = JSON.parse(this.responseText);
+  let section = document.querySelector('#listLists');
+  let lists = document.querySelector('#lists');
+  let name = document.querySelector('header #user .username').textContent;
+
+  section.remove();
+  let newsection = document.createElement('section');
+  newsection.setAttribute("id", "listLists");
+  let monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+  if(typeof categories != 'undefined') {
+    for (let i = 0; i < categories.length; i++) {
+      let category = document.createElement('article');
+      let date = new Date(categories[i].creation);
+      if(name != categories[i].username) {
+        category.innerHTML = '<span class = "info"><h4 class="title"><a href="consult_list.php?id=' + categories[i].listID + '">' + categories[i].title + '</a></h4>' +
+                             '<p class="datecreation">Created on ' + monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear() + ' by ' + categories[i].username + '</p>' +
+                             '<p class="descr">' + categories[i].descr + '</p></span></article>';
+      } else {
+        category.innerHTML = '<article><span class = "info"><h4 class="title"><a href="consult_list.php?id=' + categories[i].listID + '">' + categories[i].title + '</a></h4>' +
+                             '<p class="datecreation">Created on ' + monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear() + ' by ' + categories[i].username + '</p>' +
+                             '<p class="descr">' + categories[i].descr + '</p></span></article>' +
+                             '<form action="action_remove_list.php?id=' + categories[i].listID + '" method="post">' +
+                     				 '<input type="submit" value="Remove"></form>';
+      }
+      newsection.append(category);
+    }
+  }
+  lists.append(newsection);
 }
 
 function receiveItems(data) {

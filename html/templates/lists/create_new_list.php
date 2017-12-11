@@ -10,6 +10,10 @@
 			  <input type="textarea" name="description" value="">
 			</label>
 			<br>
+			<label>Category<br>
+				<input type="textarea" name="category" value="">
+			</label>
+			<br>
 			<input class="submit" type="submit" value="Create">
 		</form>
 	</article>
