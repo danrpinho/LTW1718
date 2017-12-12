@@ -92,6 +92,11 @@
         grid-area: content;
         margin: 0;
     }
+
+    body>.credits>#credits {
+        margin-left:1rem;
+    }
+
     body>footer {
         grid-area: footer;
     }

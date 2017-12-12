@@ -4,9 +4,15 @@
         <pre>&lt;span id="authors"&gt;</pre>
         <pre>    &lt;p&gt;Group 65:&lt;/p&gt;</pre>
         <pre>    &lt;ul&gt;</pre>
-        <pre>        &lt;li&gt;&lt;p&gt;Daniel Pinho, 201505302&lt;/p&gt;&lt;/li&gt;</pre>
-        <pre>        &lt;li&gt;&lt;p&gt;Francisco Andrade, 201503481&lt;/p&gt;&lt;/li&gt;</pre>
-        <pre>        &lt;li&gt;&lt;p&gt;Luís Saraiva, 201404302&lt;/p&gt;&lt;/li&gt;</pre>
+        <pre>        &lt;li&gt;</pre>
+        <pre>            &lt;p&gt;Daniel Pinho, 201505302&lt;/p&gt;</pre>
+        <pre>        &lt;/li&gt;</pre>
+        <pre>        &lt;li&gt;</pre>
+        <pre>            &lt;p&gt;Francisco Andrade, 201503481&lt;/p&gt;</pre>
+        <pre>        &lt;/li&gt;</pre>
+        <pre>        &lt;li&gt;</pre>
+        <pre>            &lt;p&gt;Luís Saraiva, 201404302&lt;/p&gt;</pre>
+        <pre>        &lt;/li&gt;</pre>
         <pre>    &lt;/ul&gt;</pre>
         <pre>&lt;/span&gt;</pre>
         <pre>&lt;span id="curricular_unit"&gt;</pre>
