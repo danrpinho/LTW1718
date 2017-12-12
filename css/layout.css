@@ -332,11 +332,6 @@ body>.credits {
     grid-template-areas: "login" "signin" "signup";
 }
 
-body>.credits>#credits {
-    text-align: center;
+/*body>.credits>#credits {
     margin: auto;
-}
-
-body>.credits>#credits>.authors {
-    font-family: "monospace";
-}
+}*/
