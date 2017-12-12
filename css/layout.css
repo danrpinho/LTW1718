@@ -332,6 +332,9 @@ body>.credits {
     grid-template-areas: "login" "signin" "signup";
 }
 
-/*body>.credits>#credits {
+body>.credits>#credits {
     margin: auto;
-}*/
+}
+body >.credits>#credits pre{
+    margin:0;
+}

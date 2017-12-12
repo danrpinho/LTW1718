@@ -129,8 +129,3 @@ body>section>article .requiredfields {
 body>section form>label {
     font-family: 'Barlow Semi Condensed', 'sans-serif';
 }
-
-body>.credits p{
-    font-family: "monospace";
-    font-size: 0.75rem;
-}
