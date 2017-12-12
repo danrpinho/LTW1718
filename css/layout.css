@@ -142,7 +142,7 @@ body>.content>#list>#listitems {
     margin: 1rem;
 }
 
-body>.content>#list>#listitems p{
+body>.content>#list>#listitems p {
     margin: 0.25rem 0;
 }
 
@@ -164,27 +164,27 @@ body>.content>#list>#listitems>span>.descr {
     text-align: left;
 }
 
-body>.content>#list>#listitems>form{
-    margin:0;
+body>.content>#list>#listitems>form {
+    margin: 0;
 }
 
-body>.content>#list>#listitems>form input{
-    margin:0.25rem;
+body>.content>#list>#listitems>form input {
+    margin: 0.25rem;
 }
 
-body>.content>#list>#listitems>form>.newitem>#description{
-    margin-left:0;
+body>.content>#list>#listitems>form>.newitem>#description {
+    margin-left: 0;
 }
 
-
-#assignee{
+#assignee {
     min-width: 20px;
 }
 
-body>.content>#list>#listitems>.tableitem input{
-	margin-left: 2.2em;
-	margin-top: 0.7em;
+body>.content>#list>#listitems>.tableitem input {
+    margin-left: 2.2em;
+    margin-top: 0.7em;
 }
+
 
 /*              CONTENT-LISTS             */
 
@@ -224,6 +224,11 @@ body>.content>#lists>section>article .descr {
     margin: 0;
 }
 
+body>.content>#lists>section>article .datecreation, body>.content>#lists>section>article .category{
+    margin: 0.125rem 0;
+    font-size: 0.75rem;
+}
+
 body>.content>#lists>section>article .datecreation {
     margin: 0.125rem 0;
     font-size: 0.75rem;
@@ -233,9 +238,11 @@ body>.content>#lists>section>article>form {
     margin: auto 0 auto auto;
 }
 
+
 /*              CREATE-LIST               */
-body >.content >#create_list>h3{
-    margin-left:1rem;
+
+body>.content>#create_list>h3 {
+    margin-left: 1rem;
 }
 
 
@@ -245,9 +252,10 @@ body form {
     margin: 1rem;
 }
 
-body form .submit{
+body form .submit {
     margin-top: 1rem
 }
+
 
 /*                  LOGIN                 */
 
@@ -296,10 +304,23 @@ body>.session>#login>form>.register {
 
 /*                  SIDEBAR                 */
 
-body>aside.sidebar {
+body>.sidebar {
     padding: 0;
     grid-area: sidebar;
     font-size: 0.85em;
+}
+
+body>.sidebar ul p.itemid,
+body>.sidebar ul p.listid {
+    display: none;
+}
+
+body>.sidebar>#search>form {
+    margin: 0;
+}
+
+body>.sidebar>#search>form>label{
+    display:grid;
 }
 
 
@@ -311,11 +332,9 @@ body>.credits {
     grid-template-areas: "login" "signin" "signup";
 }
 
-body >.credits >#credits{
-    text-align:center;
-    margin:auto;
+body>.credits>#credits {
+    margin: auto;
 }
-
-body > .credits > #credits > .authors{
-    font-family: "monospace";
+body >.credits>#credits pre{
+    margin:0;
 }

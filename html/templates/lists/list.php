@@ -27,7 +27,7 @@
             <?php if($_SESSION['username'] == $list['username']) {?>
                 <form id= "addlist" action="#" method="get">
                     <span class="newitem">
-                        <input id="description" type="text" name="description"placeholder="description" required>
+                        <input id="description" type="text" name="description"placeholder="description" autocomplete="off" required>
 						<datalist id="assigneesList">
 						<?php $usernames = getUsernames(); 
 							foreach($usernames as $assigneeName){?>
@@ -37,6 +37,7 @@
 							  
 						</datalist>
                         <input id="assignee" type="text" name="assignee" placeholder="assignee" list="assigneesList"  autocomplete="off" required>
+
                         <input type="date" name="datedue" placeholder="datedue" required>
                         <input type="hidden" name="id" value="<?=$list['listID']?>">
                         <input type="submit" value="Add">

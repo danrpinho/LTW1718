@@ -62,13 +62,13 @@ function receiveCat(data) {
       if(name != categories[i].username) {
         category.innerHTML = '<span class = "info"><h4 class="title"><a href="consult_list.php?id=' + categories[i].listID + '">' + categories[i].title + '</a></h4>' +
                              '<p class="datecreation">Created on ' + monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear() + ' by ' + categories[i].username + '</p>' +
-                             '<p class="descr">' + categories[i].descrList +
-                             '<p class="category">' + categories[i].category + '</p></span></article>';
+                             '<p class="category">Category: ' + categories[i].category + '</p>' +
+                             '<p class="descr">' + categories[i].descrList + '</p></span></article>';
       } else {
         category.innerHTML = '<article><span class = "info"><h4 class="title"><a href="consult_list.php?id=' + categories[i].listID + '">' + categories[i].title + '</a></h4>' +
                              '<p class="datecreation">Created on ' + monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear() + ' by ' + categories[i].username + '</p>' +
-                             '<p class="descr">' + categories[i].descrList + '</p>' +
-                             '<p class="category">' + categories[i].category + '</p></span></article>' +
+                             '<p class="category">Category: ' + categories[i].category + '</p>' +
+                             '<p class="descr">' + categories[i].descrList + '</p></span></article>' +
                              '<form action="action_remove_list.php?id=' + categories[i].listID + '" method="post">' +
                      				 '<input type="submit" value="Remove"></form>';
       }
@@ -85,6 +85,7 @@ function receiveItems(data) {
   let ret = arrayResponse[0];
   let date = new Date();
   let sectionDue = document.querySelector('#due');
+  let sectionOverDue = document.querySelector('#overdue');
 
   date.setDate(date.getDate() + 7);
   let today = new Date();
@@ -99,8 +100,9 @@ function receiveItems(data) {
 
     section.insertBefore(item, form);
     let datedue = new Date(items[i].datedue);
+
     let name = document.querySelector('header #user .username').textContent;
-    if(datedue <= date && items[i].assignee === name) {
+    if(datedue <= date && items[i].assignee === name && datedue >= today) {
       let h3 = document.querySelector('#due .dueText');
       h3.remove();
       let newh3 = document.createElement('h3');
@@ -117,6 +119,36 @@ function receiveItems(data) {
                       '<p class="itemid">' + items[i].id + '</p>' +
                       '<p class="listid">'+ items[i].listID + '</p></li>';
       sectionDue.append(due);
+    } else {
+      if(!sectionOverDue) {
+        console.log("HERE");
+        let newh3 = document.createElement('h3');
+        newh3.setAttribute("class", "overdueText");
+        let t = document.createTextNode("These items are overdue!");
+        newh3.append(t);
+        let newsectionOverDue = document.createElement('section');
+        newsectionOverDue.setAttribute("id", "overdue");
+        newsectionOverDue.prepend(newh3);
+        let due = document.createElement('ul');
+        due.setAttribute("class", "itemsSidebar itemsSidebarDue");
+        due.innerHTML = '<li><p class="itemdescr"><a href="consult_list.php?id=' + items[i].listID + '">' + items[i].descrItem + '</a></p>' +
+                        '<p class="datedue">' + items[i].datedue + '</p>' +
+                        '<p class="itemid">' + items[i].id + '</p>' +
+                        '<p class="listid">'+ items[i].listID + '</p></li>';
+        newsectionOverDue.append(due);
+        let sidebar = document.querySelector('.sidebar');
+        sidebar.insertBefore(newsectionOverDue,sectionDue);
+
+      } else {
+        console.log("HERE!!!!");
+        let due = document.createElement('ul');
+        due.setAttribute("class", "itemsSidebar itemsSidebarDue");
+        due.innerHTML = '<li><p class="itemdescr"><a href="consult_list.php?id=' + items[i].listID + '">' + items[i].descrItem + '</a></p>' +
+                        '<p class="datedue">' + items[i].datedue + '</p>' +
+                        '<p class="itemid">' + items[i].id + '</p>' +
+                        '<p class="listid">'+ items[i].listID + '</p></li>';
+        sectionOverDue.append(due);
+      }
     }
   }
   if(ret === 1){

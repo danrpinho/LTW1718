@@ -20,7 +20,7 @@ function searchReceived() {
   // Add new suggestions
   for (search in searches) {
     let item = document.createElement("li");
-    item.innerHTML = '<a href="consult_list.php?id=' + searches[search].listID + '">' + searches[search].title;
+    item.innerHTML = '<p><a href="consult_list.php?id=' + searches[search].listID + '">' + searches[search].title + '</p>';
     list.appendChild(item);
   }
 }

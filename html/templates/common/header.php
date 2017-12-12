@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en_US">
+<html>
     <head>
         <title>Do The To-Do!</title>
         <meta charset="utf-8">

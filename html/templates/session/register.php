@@ -38,11 +38,11 @@
 	<p class="requiredfields">All fields are required.</p>
     <form class="registerform" action="new_user.php" method="post">
       <label>Username<br>
-        <input type="text" name="username" placeholder="username" value="<?=$username?>" required>
+        <input type="text" name="username" placeholder="username" value="<?=$username?>" required autocomplete="off">
       </label>
       <br>
       <label>Name<br>
-        <input type="text" name="fullname" placeholder="John Doe" value="<?=$fullname?>">
+        <input type="text" name="fullname" placeholder="John Doe" value="<?=$fullname?>" autocomplete="off">
       </label>
       <br>
       <label>Password<br>
@@ -55,13 +55,10 @@
       <br>
 
       <label>Email<br>
-        <input type="email" name="email" placeholder="email@example.com" value="<?=$email?>" required>
+        <input type="email" name="email" placeholder="email@example.com" value="<?=$email?>" required autocomplete="off">
       </label>
       <br>
       <input class="submit" type="submit" value="Register">
     </form>
   </article>
 </section>
-
-
-

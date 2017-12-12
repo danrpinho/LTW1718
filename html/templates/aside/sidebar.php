@@ -1,26 +1,27 @@
 <aside class="sidebar">
-  <form class="search" action="#" method="get">
-    <label>Lists:
-      <input id="listsearch" name="listsearch" type="text">
-    </label>
-  </form>
-  <ul id="suggestions">
-  </ul>
+    <section id="search">
+        <form class="search" action="#" method="get">
+            <label><h3>Search</h3>
+                <input id="listsearch" name="listsearch" type="text" placeholder="Search..." autocomplete="off">
+            </label>
+        </form>
+        <ul id="suggestions">
+        </ul>
+    </section>
     <?php if(count($expiredItems) > 0){ ?>
-        <section id="overdue">
-            <h3 class="overdueText">These items are overdue!</h3>
-            <?php foreach($expiredItems as $expiredItem) { ?>
-                <ul class="itemsSidebar itemsSidebarOverdue">
-                    <li>
-                        <p class="itemdescr"><a href="consult_list.php?id=<?=$expiredItem['listID']?>"><?=$expiredItem['descrItem']?></a></p>
-                        <p class="datedue"><?=$expiredItem['datedue']?></p>
-                        <p class="itemid"><?=$expiredItem['id']?></p>
-                        <p class="listid"><?=$expiredItem['listID']?></p>
-                    </li>
-                </ul>
-            <?php } ?>
-
-        </section>
+    <section id="overdue">
+        <h3 class="overdueText">These items are overdue!</h3>
+        <?php foreach($expiredItems as $expiredItem) { ?>
+        <ul class="itemsSidebar itemsSidebarOverdue">
+            <li>
+                <p class="itemdescr"><a href="consult_list.php?id=<?=$expiredItem['listID']?>"><?=$expiredItem['descrItem']?></a></p>
+                <p class="datedue"><?=$expiredItem['datedue']?></p>
+                <p class="itemid"><?=$expiredItem['id']?></p>
+                <p class="listid"><?=$expiredItem['listID']?></p>
+            </li>
+        </ul>
+        <?php } ?>
+    </section>
     <?php }?>
     <section id="due">
         <?php if(count($expiringItems) > 0){?>

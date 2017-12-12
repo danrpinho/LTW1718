@@ -7,47 +7,41 @@
     }
 }
 
+
 /*              FIXING LISTS              */
-@media (max-width: 47em){
-    body>.content>#list>#listitems>.tableheader{
+
+@media (max-width: 47em) {
+    body>.content>#list>#listitems>.tableheader {
         display: none;
     }
-
-    body>.content>#list>#listitems>.tableitem{
+    body>.content>#list>#listitems>.tableitem {
         display: flex;
         flex-direction: column;
         text-align: left;
     }
-
-    body>.content>#list>#listitems>.tableitem>.assignee::before{
+    body>.content>#list>#listitems>.tableitem>.assignee::before {
         content: "Assigned to ";
     }
-
-    body>.content>#list>#listitems>.tableitem>.due::before{
+    body>.content>#list>#listitems>.tableitem>.due::before {
         content: "Due on ";
     }
-
-    body>.content>#list>#listitems>.tableitem>.descr{
+    body>.content>#list>#listitems>.tableitem>.descr {
         font-weight: bold;
     }
-
-    body>.content>#list>#listitems>.tableitem>input>::first-child::before{
+    body>.content>#list>#listitems>.tableitem>input>::first-child::before {
         content: "Solved:";
     }
-
-    body>.content>#list>#listitems>.tableitem>input{
-        margin:0 auto 0 0;
+    body>.content>#list>#listitems>.tableitem>input {
+        margin: 0 auto 0 0;
     }
-
-    body>.content>#list>#listitems .newitem{
-        display:flex;
+    body>.content>#list>#listitems .newitem {
+        display: flex;
         flex-direction: column;
     }
-
-    body>.content>#list>#listitems .newitem::before{
+    body>.content>#list>#listitems .newitem::before {
         font-family: 'Barlow Semi Condensed', 'sans-serif';
         font-weight: bold;
-        content:"Add a new item:";
+        content: "Add a new item:";
     }
 }
 
@@ -59,7 +53,7 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas: "header" "content" "footer";
+        grid-template-areas: "header" "search" "content" "footer";
         width: 100%;
         margin: 0;
     }
@@ -72,9 +66,17 @@
     body>header>h2 {
         display: none;
     }
-    body>aside {
+    body>aside>#overdue, body>aside>#due {
         display: none;
     }
+    body>aside.sidebar {
+        grid-area: search;
+        margin: 0 0 1rem 0;
+    }
+    body>aside.sidebar>#search h3 {
+        display: none;
+    }
+
     body>.content {
         display: block;
         grid-area: content;
@@ -85,11 +87,17 @@
         grid-area: content;
         margin: 0;
     }
-
     body>.credits {
         display: block;
         grid-area: content;
         margin: 0;
     }
 
+    body>.credits>#credits {
+        margin:1rem;
+    }
+
+    body>footer {
+        grid-area: footer;
+    }
 }
