@@ -6,7 +6,7 @@
         </header>
         <form action="action_change_email.php" method="post">
             <label>New e-mail address<br>
-                <input type="email" name="email" value="">
+                <input type="email" name="email" value="" autocomplete="off">
             </label>
             <br>
             <label>Confirm using your password<br>

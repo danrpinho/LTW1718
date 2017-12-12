@@ -27,8 +27,8 @@
             <?php if($_SESSION['username'] == $list['username']) {?>
                 <form id= "addlist" action="#" method="get">
                     <span class="newitem">
-                        <input id="description" type="text" name="description"placeholder="description" required>
-                        <input id="assignee" type="text" name="assignee" placeholder="assignee" required>
+                        <input id="description" type="text" name="description"placeholder="description" required autocomplete="off">
+                        <input id="assignee" type="text" name="assignee" placeholder="assignee" required autocomplete="off">
                         <input type="date" name="datedue" placeholder="datedue" required>
                         <input type="hidden" name="id" value="<?=$list['listID']?>">
                         <input type="submit" value="Add">

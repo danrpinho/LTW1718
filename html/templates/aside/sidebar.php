@@ -1,7 +1,7 @@
 <aside class="sidebar">
   <form class="search" action="#" method="get">
     <label>Lists:
-      <input id="listsearch" name="listsearch" type="text">
+      <input id="listsearch" name="listsearch" type="text" autocomplete="off">
     </label>
   </form>
   <ul id="suggestions">
