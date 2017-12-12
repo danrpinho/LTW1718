@@ -94,7 +94,7 @@ function receiveItems(data) {
     item.innerHTML = '<p class="descr">' + items[i].descrItem + '</p>' +
                      '<p class="assignee">' + items[i].assignee + '</p>' +
                      '<p class="due">' + items[i].datedue + '</p>' +
-                     '<input type="checkbox" name="solved" onchange="checkItemSolved(this, '+ items[i].id +', ' + items[i].listID+ ')">' +
+                     '<input type="checkbox" name="solved" onchange="checkItemSolved(this, '+ items[i].id +', ' + items[i].listID+ ', ' + items[i].datedue + ')">' +
                      '<span class="itemid">' + items[i].id + '</span>';
 
     section.insertBefore(item, form);
@@ -102,17 +102,20 @@ function receiveItems(data) {
     let name = document.querySelector('header #user .username').textContent;
     if(datedue <= date && items[i].assignee === name) {
       let h3 = document.querySelector('#due .dueText');
-      if(h3) {
-        h3.remove();
-        let newh3 = document.createElement('h3');
-        let t = document.createTextNode("These items are almost due!");
-        newh3.append(t);
-        sectionDue.append(newh3);
-      }
+      h3.remove();
+      let newh3 = document.createElement('h3');
+      newh3.setAttribute("class", "dueText");
+      let t = document.createTextNode("These items are almost due!");
+      newh3.append(t);
+      sectionDue.prepend(newh3);
+
 
       let due = document.createElement('ul');
-      due.innerHTML = '<li><p class="itemdescr"><a href="consolt_list.php?id=' + items[i].listID + '">' + items[i].descrItem + '</a></p>' +
-                      '<p class="datedue">' + items[i].datedue + '</p></li>';
+      due.setAttribute("class", "itemsSidebar itemsSidebarDue");
+      due.innerHTML = '<li><p class="itemdescr"><a href="consult_list.php?id=' + items[i].listID + '">' + items[i].descrItem + '</a></p>' +
+                      '<p class="datedue">' + items[i].datedue + '</p>' +
+                      '<p class="itemid">' + items[i].id + '</p>' +
+                      '<p class="listid">'+ items[i].listID + '</p></li>';
       sectionDue.append(due);
     }
   }
