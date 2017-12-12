@@ -2,7 +2,7 @@
     <section id="search">
         <form class="search" action="#" method="get">
             <label><h3>Search</h3>
-                <input id="listsearch" name="listsearch" type="text" placeholder="Search...">
+                <input id="listsearch" name="listsearch" type="text" placeholder="Search..." autocomplete="off">
             </label>
         </form>
         <ul id="suggestions">
