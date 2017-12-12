@@ -18,8 +18,8 @@
                     <p class="descr"><?=$item['descrItem']?></p>
                     <p class="assignee"><?=$item['assignee']?></p>
 					          <p class="due"><?=$item['datedue']?></p>
-                    <?php if($_SESSION['username'] === $item['assignee'] || $_SESSION['username'] === $list['username']) {?><?php $date = date('m d Y', strtotime($item['datedue'])); ?>
-                    <input type="checkbox" name="solved" <?php if($item['solved']) { ?>checked<?php } ?> onchange="checkItemSolved(this, '<?=$item['id']?>', '<?=$item['listID']?>', '<?=$item['descrItem']?>', '<?=$item['datedue']?>')"> <?php } ?>
+                    <input type="checkbox" name="solved" <?php if($item['solved']) { ?>checked<?php } ?> <?php if($_SESSION['username'] === $item['assignee'] || $_SESSION['username'] === $list['username']) {?>onchange="checkItemSolved(this, '<?=$item['id']?>', '<?=$item['listID']?>', '<?=$item['descrItem']?>', '<?=$item['datedue']?>')"<?php }  else { ?>
+							onclick="return false;" <?php } ?> >  
                     <span class="itemid"><?=$item['id']?></span>
                 </span>
             <?php } ?>
@@ -28,7 +28,15 @@
                 <form id= "addlist" action="#" method="get">
                     <span class="newitem">
                         <input id="description" type="text" name="description"placeholder="description" required>
-                        <input id="assignee" type="text" name="assignee" placeholder="assignee" required>
+						<datalist id="assigneesList">
+						<?php $usernames = getUsernames(); 
+							foreach($usernames as $assigneeName){?>
+							<option value="<?=$assigneeName['username']?>" >
+							<?php }?>
+						
+							  
+						</datalist>
+                        <input id="assignee" type="text" name="assignee" placeholder="assignee" list="assigneesList"  autocomplete="off" required>
                         <input type="date" name="datedue" placeholder="datedue" required>
                         <input type="hidden" name="id" value="<?=$list['listID']?>">
                         <input type="submit" value="Add">

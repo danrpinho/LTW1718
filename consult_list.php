@@ -2,6 +2,7 @@
     include_once('html/includes/init.php');
     include_once('html/database/connection.php');
     include_once('html/templates/common/header.php');
+	include_once('html/database/user.php');
 
     if (isset($_SESSION['username']) && $_SESSION['username'] != '') {
         include_once('html/database/list.php');

@@ -43,7 +43,7 @@
 		}
 	  }
   }
-
+  
   function getUser($username){
     global $dbh;
     $stmt = $dbh->prepare('SELECT * FROM users WHERE username = ?');
@@ -115,5 +115,12 @@
 	  else{
 		 return 0;
   }
+ }
+ 
+ function getUsernames(){
+	 global $dbh;
+	 $stmt = $dbh->prepare('SELECT username FROM USERS');
+	 $stmt->execute();
+	 return $stmt->fetchAll();
  }
 ?>

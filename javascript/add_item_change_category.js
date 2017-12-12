@@ -120,9 +120,15 @@ function receiveItems(data) {
     }
   }
   if(ret === 1){
+	  document.getElementById("assignee").value="";
 	  alert('The assignee you chose is not a valid user');
   }
   else if(ret === 2){
+	  document.getElementById("description").value="";
 	  alert('The description you chose has already been used to describe a different item');
   }
 }
+
+/*function changeInputAssignee(val){
+	var autoCompleteResult = ma
+}*/
