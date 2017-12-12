@@ -62,13 +62,13 @@ function receiveCat(data) {
       if(name != categories[i].username) {
         category.innerHTML = '<span class = "info"><h4 class="title"><a href="consult_list.php?id=' + categories[i].listID + '">' + categories[i].title + '</a></h4>' +
                              '<p class="datecreation">Created on ' + monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear() + ' by ' + categories[i].username + '</p>' +
-                             '<p class="descr">' + categories[i].descrList +
-                             '<p class="category">' + categories[i].category + '</p></span></article>';
+                             '<p class="category">Category: ' + categories[i].category + '</p>' +
+                             '<p class="descr">' + categories[i].descrList + '</p></span></article>';
       } else {
         category.innerHTML = '<article><span class = "info"><h4 class="title"><a href="consult_list.php?id=' + categories[i].listID + '">' + categories[i].title + '</a></h4>' +
                              '<p class="datecreation">Created on ' + monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear() + ' by ' + categories[i].username + '</p>' +
-                             '<p class="descr">' + categories[i].descrList + '</p>' +
-                             '<p class="category">' + categories[i].category + '</p></span></article>' +
+                             '<p class="category">Category: ' + categories[i].category + '</p>' +
+                             '<p class="descr">' + categories[i].descrList + '</p></span></article>' +
                              '<form action="action_remove_list.php?id=' + categories[i].listID + '" method="post">' +
                      				 '<input type="submit" value="Remove"></form>';
       }
