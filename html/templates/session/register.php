@@ -37,27 +37,11 @@
     <h3>Register a new account</h3>
 	<p class="requiredfields">All fields are required.</p>
     <form class="registerform" action="new_user.php" method="post">
-      <label>Username<br>
-        <input type="text" name="username" placeholder="username" value="<?=$username?>" required >
-      </label>
-      <br>
-      <label>Name<br>
-        <input type="text" name="fullname" placeholder="John Doe" value="<?=$fullname?>" >
-      </label>
-      <br>
-      <label>Password<br>
-        <input type="password" name="password" placeholder="&#8226&#8226&#8226&#8226&#8226&#8226&#8226&#8226" value="" required>
-      </label>
-      <br>
-      <label>Confirm Password<br>
-        <input type="password" name="confirmpassword" placeholder="&#8226&#8226&#8226&#8226&#8226&#8226&#8226&#8226" value="" required>
-      </label>
-      <br>
-
-      <label>Email<br>
-        <input type="email" name="email" placeholder="email@example.com" value="<?=$email?>" required >
-      </label>
-      <br>
+      <input type="text" name="username" placeholder="Username" value="<?=$username?>" required >
+        <input type="text" name="fullname" placeholder="Full Name" value="<?=$fullname?>" >
+        <input type="password" name="password" placeholder="Password" value="" required>
+        <input type="password" name="confirmpassword" placeholder="Confirm Password" value="" required>
+        <input type="email" name="email" placeholder="E-mail address" value="<?=$email?>" required >
       <input class="submit" type="submit" value="Register">
     </form>
   </article>

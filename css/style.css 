@@ -1,0 +1,129 @@
+/*      cores http://www.color-hex.com/color-palette/49801
+        http://www.colourlovers.com/palette/92095/Giant_Goldfish    */
+
+
+/*                  HEADER                  */
+
+body>header {
+    background-color: #0e7979;
+}
+
+body>header a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Crete Round', 'slab';
+}
+
+body>header h2 {
+    font-size: 1.15rem;
+}
+
+body>header>div a {
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+}
+
+
+/*                  SIDEBAR                 */
+
+aside {
+    background-color: #F38630;
+    padding: 0 0 0 0;
+}
+
+aside > section{
+    margin: 0.75rem;
+}
+
+aside > section > h3{
+    margin: 0;
+    font-family: 'Crete Round', 'slab';
+}
+
+aside > section > ul p{
+    margin: 0;
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+}
+
+aside a{
+    text-decoration: none;
+    color: black;
+}
+
+/*aside > section > ul p.itemdescr{
+    font-weight: bold;
+}*/
+
+aside > section > ul p.datedue{
+    font-size: 0.75rem;
+}
+
+/*                  FOOTER                  */
+
+body>footer {
+    background-color: #0e7979;
+}
+
+body>footer>p>a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Crete Round', 'slab';
+}
+
+
+/*                  MAIN CONTENT            */
+
+body > section {
+    background-color: #69D2E7;
+}
+
+body>section h3 {
+    font-family: 'Crete Round', 'slab';
+}
+
+body>section h4>a {
+    color: black;
+    text-decoration: none;
+    font-family: 'Crete Round', 'slab';
+}
+
+body>section .back>a{
+    color:black;
+    text-decoration: none;
+}
+
+body>section #create>a{
+    color:black;
+    text-decoration: none;
+}
+
+body>section p {
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+}
+
+body>section>td {
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+}
+
+body .datecreation{
+    font-style: italic;
+}
+
+body > .content ul > li{
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+}
+
+
+body > .content ul > li > a{
+    text-decoration: none;
+    color: black;
+}
+
+/*              FORMS            */
+body >  section >article .requiredfields{
+    font-style: italic;
+}
+
+body > section form > label{
+    font-family: 'Barlow Semi Condensed', 'sans-serif';
+
+}

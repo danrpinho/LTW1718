@@ -21,20 +21,13 @@
             <h3 class="title">Change password</h3>
             <h3 class="back"><a href="user_settings.php">Back</a></h3>
         </header>
+        <span class="form">
         <form action="action_change_password.php" method="post">
-            <label>Current password<br>
-                <input type="password" name="currentpassword" value="">
-            </label>
-            <br>
-            <label>New password<br>
-                <input type="password" name="newpassword" value="">
-            </label>
-            <br>
-            <label>Confirm new password<br>
-                <input type="password" name="confirmpassword" value="">
-            </label>
-            <br>
+            <input type="password" name="currentpassword" placeholder="Current password" value="">
+            <input type="password" name="newpassword" placeholder="New password" value="">
+            <input type="password" name="confirmpassword" placeholder="Confirm new password" value="">
             <input class="submit" type="submit" value="Submit">
         </form>
+        </span>
     </article>
 </section>

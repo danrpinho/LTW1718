@@ -53,6 +53,7 @@ body>header>#user {
 
 body>header>#user>form {
     margin: 0;
+    display:block;
 }
 
 
@@ -238,22 +239,29 @@ body>.content>#lists>section>article>form {
     margin: auto 0 auto auto;
 }
 
+/*                  FORMS                 */
 
-/*              CREATE-LIST               */
+/*body #create_list{
+    display:grid;
+}*/
 
-body>.content>#create_list>h3 {
-    margin-left: 1rem;
+body .form {
+    display:grid;
+    margin: auto;
 }
 
-
-/*                  FORMS                 */
+body .form h3{
+    text-align: center;
+}
 
 body form {
     margin: 1rem;
+    display:grid;
+
 }
 
-body form .submit {
-    margin-top: 1rem
+body form input{
+    margin: 0.25rem 0.1rem;
 }
 
 
@@ -299,6 +307,18 @@ body>.session>#login>form>.login {
 body>.session>#login>form>.register {
     grid-area: register;
     margin: 1rem 2.5rem 0.5rem;
+}
+
+body>.session>#register>p{
+    text-align: center;
+}
+
+body>.session>#register>form{
+    display:grid;
+}
+
+body>.session>#register>form>input{
+    margin: 0.25rem 0.2rem;
 }
 
 

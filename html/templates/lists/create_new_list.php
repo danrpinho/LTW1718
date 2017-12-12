@@ -1,20 +1,13 @@
 <section class="content">
-	<article id="create_list">
+	<article id="create_list" class="form">
+		<span class="form">
 		<h3>Create a new list</h3>
 		<form action="new_list.php" method="post">
-		    <label>Title<br>
-			  <input type="text" name="title" value="" autocomplete="off">
-			</label>
-			<br>
-		    <label>Description<br>
-			  <input type="textarea" name="description" value="" autocomplete="off">
-			</label>
-			<br>
-			<label>Category<br>
-				<input type="textarea" name="category" value="" autocomplete="off">
-			</label>
-			<br>
+		    <input type="text" name="title" value="" placeholder="List title" autocomplete="off" required>
+			<input type="textarea" rows="4" name="description" value="" placeholder="Description" autocomplete="off">
+			<input type="text" name="category" value="" placeholder="Category" autocomplete="off">
 			<input class="submit" type="submit" value="Create">
 		</form>
+		</span>
 	</article>
 </section>

@@ -8,8 +8,8 @@
         <ul>
             <li><a href="show_user.php">View account details</a></li>
             <li><a href="change_pw.php">Change password</a></li>
-            <li><a href="change_email.php">Update e-mail address</a></li>
-            <li><a href="change_user.php">Change personal details</a></li>
+            <li><a href="change_email.php">Change e-mail address</a></li>
+            <li><a href="change_user.php">Change name</a></li>
         </ul>
     </article>
 </section>
