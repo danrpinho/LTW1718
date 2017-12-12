@@ -6,7 +6,7 @@
         </header>
         <form action="action_change_user.php" method="post">
             <label>New name<br>
-                <input type="text" name="name" value="">
+                <input type="text" name="name" value="" autocomplete="off">
             </label>
             <br>
             <label>Confirm using your password<br>
