@@ -1,6 +1,6 @@
 <section class="credits">
     <article id="credits">
-        <h3>About</h3>
+        <h3>About (in HTML code (☞ﾟ∀ﾟ)☞)</h3>
         <pre>&lt;span id="authors"&gt;</pre>
         <pre>    &lt;p&gt;Group 65:&lt;/p&gt;</pre>
         <pre>    &lt;ul&gt;</pre>

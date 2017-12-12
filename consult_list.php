@@ -6,11 +6,12 @@
 
     if (isset($_SESSION['username']) && $_SESSION['username'] != '') {
         include_once('html/database/list.php');
-		if(validListID($_GET['id'], $_SESSION['username'])){ 
+		if(validListID($_GET['id'], $_SESSION['username'])){
 			$list = getListById($_GET['id']);
 			$items = getListItems($_GET['id']);
 			$expiringItems = getExpiringItems();
 			$expiredItems = getExpiredItems();
+			$usernames = getUsernames();
 			include_once('html/templates/aside/sidebar.php');
 			include_once('html/templates/lists/list.php');
 		}
