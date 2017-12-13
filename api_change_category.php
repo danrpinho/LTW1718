@@ -3,7 +3,7 @@
   include_once('html/database/list.php');
   include_once('html/includes/init.php');
 
-  $category = $_POST['category'];
+  $category = htmlentities($_POST['category'], ENT_QUOTES);
   if($category == "Items"){
     $lists = getListsAssociated();
     echo json_encode($lists);

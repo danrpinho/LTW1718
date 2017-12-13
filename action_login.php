@@ -1,17 +1,19 @@
 <?php
     include_once('html/includes/init.php');
-    include_once('html/database/user.php');
+	include_once('html/database/user.php');
 
-        $ret = isLoginCorrect($_POST['username'], $_POST['password']); 
-            
+		$username = htmlentities($_POST['username'], ENT_QUOTES);
+
+        $ret = isLoginCorrect($username, htmlentities($_POST['password'], ENT_QUOTES));
+
 		if($ret === 0){
-			setCurrentUser($_POST['username']);
+			setCurrentUser($username);
 			header('Location: index.php');
 		}
 		else if($ret === 1)
 			header('Location: index.php?msg=1');
 		else if($ret === 2)
-			header('Location: index.php?msg=2&username='.$_POST['username']);
-        
+			header('Location: index.php?msg=2&username='.$username);
+
 
 ?>

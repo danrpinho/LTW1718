@@ -1,6 +1,6 @@
 <?php
 include_once('html/includes/init.php');
 include_once('html/database/list.php');
-removeList($_GET['id']);
+removeList(htmlentities($_GET['id'], ENT_QUOTES));
 header('Location: index.php');
 ?>
