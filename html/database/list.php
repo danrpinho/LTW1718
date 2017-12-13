@@ -129,7 +129,7 @@
     function getListsAssociated() {
       global $dbh;
       if (isset($_SESSION['username'])) {
-        $stmt = $dbh->prepare('SELECT DISTINCT * FROM todolists JOIN listitems USING (listID) WHERE assignee = ? AND username != ?');
+        $stmt = $dbh->prepare('SELECT * FROM todolists  WHERE listID = (SELECT listID FROM listitems WHERE assignee = ?) AND username != ?');
         $stmt->execute(array($_SESSION['username'], $_SESSION['username']));
         return $stmt->fetchAll();
       }
