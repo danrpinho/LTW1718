@@ -1,13 +1,18 @@
 <?php
     include_once('html/includes/init.php');
     include_once('html/database/user.php');
+	/*if ($_SESSION['csrf'] !== $_POST['csrf']) {
+        header('Location: index.php');
+        die();
+    }else{
+*/
 	$date = date("Y-m-d");
 
-	$username = htmlentities($_POST['username'], ENT_QUOTES);
+	$username = $_POST['username'];
 	$fullname = htmlentities($_POST['fullname'], ENT_QUOTES);
-	$password = htmlentities($_POST['password'], ENT_QUOTES);
-	$confirmpassword = htmlentities($_POST['confirmpassword'], ENT_QUOTES);
-	$email = htmlentities($_POST['email'], ENT_QUOTES);
+	$password = $_POST['password'];
+	$confirmpassword = $_POST['confirmpassword'];
+	$email = $_POST['email'];
 
 
 	$ret=addUser($username, $fullname, $password, $confirmpassword, $email, $date);

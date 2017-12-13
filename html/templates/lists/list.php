@@ -36,9 +36,9 @@
 
 						</datalist>
                         <input id="assignee" type="text" name="assignee" placeholder="assignee" list="assigneesList"  autocomplete="off" required>
-
                         <input type="date" name="datedue" placeholder="datedue" required>
                         <input type="hidden" name="id" value="<?=$list['listID']?>">
+                        <input type="hidden" name="csrf" value="<?=$_SESSION['csrf']?>">
                         <input type="submit" value="Add">
                     </span>
                 </form>

@@ -3,7 +3,7 @@
   include_once('html/database/list.php');
   include_once('html/includes/init.php');
 
-  $name = htmlentities($_GET['name'], ENT_QUOTES);
+  $name = $_GET['name'];
 
   $search = getSearch($name);
 

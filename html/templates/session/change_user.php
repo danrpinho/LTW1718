@@ -8,6 +8,7 @@
         <form action="action_change_user.php" method="post">
             <input type="text" name="name" value="" placeholder="New name" autocomplete="off">
             <input type="password" name="password" placeholder="Confirm using password" value="">
+            <input type="hidden" name="csrf" value="<?=$_SESSION['csrf']?>">
             <input class="submit" type="submit" value="Submit">
         </form>
         </span>

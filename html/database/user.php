@@ -1,20 +1,21 @@
 <?php
   function isLoginCorrect($username, $password) {
     global $dbh;
-	$stmt = $dbh->prepare('SELECT * FROM users WHERE username = ?');
+		$stmt = $dbh->prepare('SELECT * FROM users WHERE username = ?');
     $stmt->execute(array($username));
-	if( $stmt->fetch() === false){
-		return 1;
-	}
+		if( $stmt->fetch() === false){
+			return 1;
+		}
     $stmt = $dbh->prepare('SELECT * FROM users WHERE username = ? AND pword = ?');
     $stmt->execute(array($username, sha1($password)));
     if( $stmt->fetch() === false){
-		return 2;
+			return 2;
+		} else {
+			return 0;
+		}
 	}
-	else{
-		return 0;
-	}
-  }
+
+
 
   function addUser($username, $fullname, $password, $confirmPassword, $email, $date) {
 	  if($password !== $confirmPassword){
@@ -43,7 +44,7 @@
 		}
 	  }
   }
-  
+
   function getUser($username){
     global $dbh;
     $stmt = $dbh->prepare('SELECT * FROM users WHERE username = ?');
@@ -87,7 +88,7 @@
 	}
 
   }
-  
+
   function validPass($password){
 	  $upperCase=0;
 	  $lowerCase=0;
@@ -106,9 +107,9 @@
 		  else{
 			  $other=1;
 		  }
-		  
+
 	  }
-	  
+
 	  if(($upperCase + $lowerCase + $numeral + $other)>= 3){
 		  return 1;
 	  }
@@ -116,7 +117,7 @@
 		 return 0;
   }
  }
- 
+
  function getUsernames(){
 	 global $dbh;
 	 $stmt = $dbh->prepare('SELECT username FROM USERS');

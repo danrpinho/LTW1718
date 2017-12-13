@@ -1,9 +1,12 @@
 <?php
     include_once('html/includes/init.php');
     include_once('html/database/user.php');
-
-        if (isPassCorrect(htmlentities($_POST['currentpassword'], ENT_QUOTES))) {
-            $ret=updatePass(htmlentities($_POST['newpassword'], ENT_QUOTES), htmlentities($_POST['confirmpassword'], ENT_QUOTES));
+	if ($_SESSION['csrf'] !== $_POST['csrf']) {
+        header('Location: index.php');
+		die();
+	} else {
+        if (isPassCorrect($_POST['currentpassword'])) {
+            $ret=updatePass($_POST['newpassword'], $_POST['confirmpassword']);
 			if($ret === 2){
 				header('Location: change_pw.php?msg=2');
 			}
@@ -18,6 +21,6 @@
 		else{
 			header('Location: change_pw.php?msg=1');
 		}
-
+	}
 
 ?>

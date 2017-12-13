@@ -26,6 +26,7 @@
             <input type="password" name="currentpassword" placeholder="Current password" value="">
             <input type="password" name="newpassword" placeholder="New password" value="">
             <input type="password" name="confirmpassword" placeholder="Confirm new password" value="">
+            <input type="hidden" name="csrf" value="<?=$_SESSION['csrf']?>">
             <input class="submit" type="submit" value="Submit">
         </form>
         </span>

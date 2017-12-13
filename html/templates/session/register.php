@@ -38,10 +38,10 @@
 	<p class="requiredfields">All fields are required.</p>
     <form class="registerform" action="new_user.php" method="post">
       <input type="text" name="username" placeholder="Username" value="<?=$username?>" required >
-        <input type="text" name="fullname" placeholder="Full Name" value="<?=$fullname?>" >
-        <input type="password" name="password" placeholder="Password" value="" required>
-        <input type="password" name="confirmpassword" placeholder="Confirm Password" value="" required>
-        <input type="email" name="email" placeholder="E-mail address" value="<?=$email?>" required >
+      <input type="text" name="fullname" placeholder="Full Name" value="<?=$fullname?>" >
+      <input type="password" name="password" placeholder="Password" value="" required>
+      <input type="password" name="confirmpassword" placeholder="Confirm Password" value="" required>
+      <input type="email" name="email" placeholder="E-mail address" value="<?=$email?>" required >
       <input class="submit" type="submit" value="Register">
     </form>
   </article>

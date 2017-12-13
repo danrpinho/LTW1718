@@ -6,6 +6,7 @@
 		    <input type="text" name="title" value="" placeholder="List title" autocomplete="off" required>
 			<input type="textarea" rows="4" name="description" value="" placeholder="Description" autocomplete="off">
 			<input type="text" name="category" value="" placeholder="Category" autocomplete="off">
+			<input type="hidden" name="csrf" value="<?=$_SESSION['csrf']?>">
 			<input class="submit" type="submit" value="Create">
 		</form>
 		</span>
