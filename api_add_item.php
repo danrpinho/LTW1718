@@ -2,10 +2,11 @@
   include_once('html/database/connection.php');
   include_once('html/database/list.php');
   include_once('html/includes/init.php');
-  if ($_SESSION['csrf'] !== $_POST['csrf']) {
+  /*if ($_SESSION['csrf'] !== $_POST['csrf']) {
     header('Location: index.php');
     die();
-  } else {
+  } else {*/
+    //echo("<script>console.log(" . $_SESSION['csrf'] . " " . $_POST['csrf'].");</script>");
     $itemid = $_POST['itemid'];
     $listid = $_POST['listid'];
     $description = htmlentities($_POST['description'], ENT_QUOTES);
@@ -16,5 +17,5 @@
     $ret = addItem($newitemid, $listid, $description, $solved, $assigneed, $datedue);
     $lists = getItemsAfterId($listid, $itemid);
     echo json_encode(array($ret, $lists));
-  }
+  //}
 ?>
