@@ -1,6 +1,8 @@
 let text = document.getElementById("listsearch");
-text.addEventListener("keyup", searchChanged);
 
+if(text) {
+  text.addEventListener("keyup", searchChanged);
+}
 // Handler for change event on text input
 function searchChanged(event) {
   let text = event.target;

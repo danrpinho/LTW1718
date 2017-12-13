@@ -6,7 +6,6 @@
     header('Location: index.php');
     die();
   } else {*/
-    //echo("<script>console.log(" . $_SESSION['csrf'] . " " . $_POST['csrf'].");</script>");
     $itemid = $_POST['itemid'];
     $listid = $_POST['listid'];
     $description = htmlentities($_POST['description'], ENT_QUOTES);

@@ -1,7 +1,6 @@
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS todolists;
 DROP TABLE IF EXISTS listitems;
-DROP TABLE IF EXISTS categories;
 
 CREATE TABLE users(
     username TEXT PRIMARY KEY,
