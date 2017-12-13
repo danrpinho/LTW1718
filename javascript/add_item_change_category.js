@@ -32,11 +32,11 @@ function encodeForAjax(data) {
 
 function submitItem(event) {
 
-  let description = escapeHtml(document.querySelector('input[name=description]').value);
-  let assigneed = escapeHtml(document.querySelector('input[name=assignee]').value);
-  let datedue = escapeHtml(document.querySelector('input[name=datedue]').value);
-  let listid = escapeHtml(document.querySelector('input[name=id]').value);
-  let itemid = document.querySelector('#list #listitems .tableitem') != null ? escapeHtml(document.querySelector('#list #listitems .tableitem:last-of-type span.itemid').textContent) : 0;
+  let description = /*escapeHtml(*/document.querySelector('input[name=description]').value;//);
+  let assigneed = /*escapeHtml(*/document.querySelector('input[name=assignee]').value;//);
+  let datedue = /*escapeHtml(*/document.querySelector('input[name=datedue]').value;//);
+  let listid = /*escapeHtml(*/document.querySelector('input[name=id]').value;//);
+  let itemid = document.querySelector('#list #listitems .tableitem') != null ? /*escapeHtml(*/document.querySelector('#list #listitems .tableitem:last-of-type span.itemid').textContent/*)*/ : 0;
   let request = new XMLHttpRequest();
   request.addEventListener('load', receiveItems);
   request.open('POST', 'api_add_item.php', true);
@@ -47,7 +47,7 @@ function submitItem(event) {
 }
 
 function changeCat(event) {
-  let category =  escapeHtml(select.options[select.selectedIndex].value);
+  let category =  /*escapeHtml(*/select.options[select.selectedIndex].value;//);
   let request = new XMLHttpRequest();
   request.addEventListener('load', receiveCat);
   request.open('POST', 'api_change_category.php', true);
