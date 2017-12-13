@@ -1,3 +1,18 @@
+let entityMap = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': '&quot;',
+  "'": '&#39;',
+  "/": '&#x2F;'
+};
+
+function escapeHtml(string) {
+  return String(string).replace(/[&<>"'\/]/g, function (s) {
+      return entityMap[s];
+  });
+}
+
 let form = document.getElementById('addlist');
 let table = document.getElementById('tablelist');
 let select = document.getElementById('category');
@@ -18,6 +33,7 @@ function encodeForAjax(data) {
 function submitItem(event) {
 
   let description = document.querySelector('input[name=description]').value;
+  description = escapeHtml(description);
   let assigneed = document.querySelector('input[name=assignee]').value;
   let datedue = document.querySelector('input[name=datedue]').value;
   let listid = document.querySelector('input[name=id]').value;
@@ -33,6 +49,7 @@ function submitItem(event) {
 
 function changeCat(event) {
   let category =  select.options[select.selectedIndex].value;
+  category = escapeHtml(category);
   let request = new XMLHttpRequest();
   request.addEventListener('load', receiveCat);
   request.open('POST', 'api_change_category.php', true);
