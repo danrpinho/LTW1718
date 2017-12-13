@@ -239,6 +239,16 @@ body>.content>#lists>section>article>form {
     margin: auto 0 auto auto;
 }
 
+/*                USER-DETAILS            */
+body>.content>#show_user li>h4{
+    margin: 0;
+}
+
+body>.content>#show_user li>p{
+    margin: 0 0 1rem 0;
+}
+
+
 /*                  FORMS                 */
 
 /*body #create_list{
