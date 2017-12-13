@@ -10,7 +10,6 @@
         $ret = isLoginCorrect($username, $_POST['password']);
 
 		if($ret === 0){
-			echo "<script> alert(\"worked!\");</script>";
 			setCurrentUser($username);
 			header('Location: index.php');
 		}

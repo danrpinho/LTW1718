@@ -116,7 +116,9 @@ function receiveItems(data) {
     let datedue = new Date(items[i].datedue);
 
     let name = document.querySelector('header #user .username').textContent;
+
     if(datedue <= date && items[i].assignee === name && datedue >= today) {
+
       let h3 = document.querySelector('#due .dueText');
       h3.remove();
       let newh3 = document.createElement('h3');
@@ -133,9 +135,8 @@ function receiveItems(data) {
                       '<p class="itemid">' + items[i].id + '</p>' +
                       '<p class="listid">'+ items[i].listID + '</p></li>';
       sectionDue.append(due);
-    } else {
+    } else if(datedue < today && items[i].assignee == name){
       if(!sectionOverDue) {
-        console.log("HERE");
         let newh3 = document.createElement('h3');
         newh3.setAttribute("class", "overdueText");
         let t = document.createTextNode("These items are overdue!");
@@ -154,7 +155,6 @@ function receiveItems(data) {
         sidebar.insertBefore(newsectionOverDue,sectionDue);
 
       } else {
-        console.log("HERE!!!!");
         let due = document.createElement('ul');
         due.setAttribute("class", "itemsSidebar itemsSidebarDue");
         due.innerHTML = '<li><p class="itemdescr"><a href="consult_list.php?id=' + items[i].listID + '">' + items[i].descrItem + '</a></p>' +
