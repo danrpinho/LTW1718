@@ -30,34 +30,32 @@ aside {
     padding: 0 0 0 0;
 }
 
-aside>section {
+aside > section{
     margin: 0.75rem;
 }
 
-aside h3 {
+aside > section > h3{
     margin: 0;
     font-family: 'Crete Round', 'slab';
 }
 
-aside>section>ul p {
+aside > section > ul p{
     margin: 0;
     font-family: 'Barlow Semi Condensed', 'sans-serif';
 }
 
-aside a {
+aside a{
     text-decoration: none;
     color: black;
 }
-
 
 /*aside > section > ul p.itemdescr{
     font-weight: bold;
 }*/
 
-aside>section>ul p.datedue {
+aside > section > ul p.datedue{
     font-size: 0.75rem;
 }
-
 
 /*                  FOOTER                  */
 
@@ -74,7 +72,7 @@ body>footer>p>a {
 
 /*                  MAIN CONTENT            */
 
-body>section {
+body > section {
     background-color: #69D2E7;
 }
 
@@ -88,13 +86,13 @@ body>section h4>a {
     font-family: 'Crete Round', 'slab';
 }
 
-body>section .back>a {
-    color: black;
+body>section .back>a{
+    color:black;
     text-decoration: none;
 }
 
-body>section #create>a {
-    color: black;
+body>section #create>a{
+    color:black;
     text-decoration: none;
 }
 
@@ -102,30 +100,30 @@ body>section p {
     font-family: 'Barlow Semi Condensed', 'sans-serif';
 }
 
-/*body>section>td {
+body>section>td {
     font-family: 'Barlow Semi Condensed', 'sans-serif';
-}*/
+}
 
-body .datecreation, body>.content>#lists>section>article .category {
+body .datecreation{
     font-style: italic;
 }
 
-body>.content ul>li {
+body > .content ul > li{
     font-family: 'Barlow Semi Condensed', 'sans-serif';
 }
 
-body>.content ul>li>a {
+
+body > .content ul > li > a{
     text-decoration: none;
     color: black;
 }
 
-
 /*              FORMS            */
-
-body>section>article .requiredfields {
+body >  section >article .requiredfields{
     font-style: italic;
 }
 
-body>section form>label {
+body > section form > label{
     font-family: 'Barlow Semi Condensed', 'sans-serif';
+
 }
