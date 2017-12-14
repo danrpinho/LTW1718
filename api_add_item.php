@@ -15,6 +15,6 @@
     $newitemid = $itemid + 1;
     $ret = addItem($newitemid, $listid, $description, $solved, $assigneed, $datedue);
     $lists = getItemsAfterId($listid, $itemid);
-    echo json_encode(array($ret, $lists));
+    echo json_encode(array($ret, $lists, $_SESSION['username']));
   //}
 ?>

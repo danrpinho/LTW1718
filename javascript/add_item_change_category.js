@@ -97,6 +97,7 @@ function receiveItems(data) {
   let arrayResponse = JSON.parse(this.responseText);
   let items = arrayResponse[1];
   let ret = arrayResponse[0];
+  let S_username = arrayResponse[2];
   let date = new Date();
   let sectionDue = document.querySelector('#due');
   let sectionOverDue = document.querySelector('#overdue');
@@ -106,11 +107,18 @@ function receiveItems(data) {
   for (let i = 0; i < items.length; i++) {
     let item = document.createElement('span');
     item.classList.add('tableitem');
+	let checkbox_string;
+	if(S_username === items[i].assignee){
+		checkbox_string = '<input type="checkbox" name="solved" onchange="checkItemSolved(this, '+ items[i].id +', ' + items[i].listID+ ', '+items[i].descrItem +','+items[i].datedue + ',1)">';
+	}
+	else{
+		checkbox_string = '<input type="checkbox" name="solved" onchange="checkItemSolved(this, '+ items[i].id +', ' + items[i].listID+ ', '+items[i].descrItem +',' + items[i].datedue + ',0)">';
+	}
     item.innerHTML = '<p class="descr">' + items[i].descrItem + '</p>' +
                      '<p class="assignee">' + items[i].assignee + '</p>' +
                      '<p class="due">' + items[i].datedue + '</p>' +
-                     '<input type="checkbox" name="solved" onchange="checkItemSolved(this, '+ items[i].id +', ' + items[i].listID+ ', ' + items[i].datedue + ')">' +
-                     '<span class="itemid">' + items[i].id + '</span>';
+                     '<input type="checkbox" name="solved" onclick="return false">'+
+					 '<span class="itemid">' + items[i].id + '</span>';
 
     section.insertBefore(item, form);
     let datedue = new Date(items[i].datedue);

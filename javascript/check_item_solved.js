@@ -1,11 +1,19 @@
-let itemsIDSidebar = document.querySelectorAll('.itemsSidebar li .itemid');
-let listIDSidebar = document.querySelectorAll('.itemsSidebar li .listid');
-let itemsSidebar = document.querySelectorAll('.itemsSidebar');
-let due = document.querySelector('#due');
-let overdue = document.querySelector('#overdue');
-function checkItemSolved(element, itemid, listID, descr, datedue) {
 
+function checkItemSolved(element, itemid, listID, descr, datedue, assignee) {
+	let itemsIDSidebar = document.querySelectorAll('.itemsSidebar li .itemid');
+	let listIDSidebar = document.querySelectorAll('.itemsSidebar li .listid');
+	let itemsSidebar = document.querySelectorAll('.itemsSidebar');
+	let due = document.querySelector('#due');
+	let overdue = document.querySelector('#overdue');
+	
     let solved;
+	if(element.checked){
+		solved=1;	
+	}
+	else{
+		solved=0;
+	}
+	if(assignee){
       if(element.checked) {
         solved = 1;
         for(let i = 0; i < itemsIDSidebar.length; i++) {
@@ -29,8 +37,9 @@ function checkItemSolved(element, itemid, listID, descr, datedue) {
             if(itemsSidebarOverdue.length == 0) {
               console.log("Change Overdue Text");
               let h3 = document.querySelector('#overdue .overdueText');
-              if(h3)
-                overdue.remove();
+			  overdue.remove();
+              /*if(h3)
+                overdue.remove();*/
             }
           }
         }
@@ -92,10 +101,11 @@ function checkItemSolved(element, itemid, listID, descr, datedue) {
                                 '<p class="itemid">' + itemid + '</p>' +
                                 '<p class="listid">' + listID + '</p></li>';
             due.append(dueitem);
-
+		
         }
       }
-
+	}
+	
     let request = new XMLHttpRequest();
 
     request.open('POST', 'api_check_item.php', true);
